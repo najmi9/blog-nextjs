@@ -1,5 +1,13 @@
 import Head from 'next/head'
+import About from '../me/about';
 import Blog from '../me/blog';
+import Facts from '../me/facts';
+import Skills from '../me/skills';
+import Resume from '../me/resume';
+import Contact from '../me/contact';
+import Testiomonials from '../me/testiomonials';
+import Protofolio from '../me/protofolio';
+import Services from '../me/services';
 
 export default function Home({data}) {
   return (
@@ -11,7 +19,14 @@ export default function Home({data}) {
       </Head>
 
       <main id="main">
-        <h1>Hello World, where is my fuel !!</h1>
+        <About />
+        <Facts />
+        <Skills />
+        <Resume />
+        <Protofolio />
+        <Services />
+        <Testiomonials />
+        <Contact />
         <Blog data={data}/>
       </main>
     </>
