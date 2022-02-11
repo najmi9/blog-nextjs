@@ -1,0 +1,46 @@
+---
+title: Math For Everyone
+image:
+---
+
+# Hello Makdown With Math
+$$\sqrt(5)$$
+
+$$\sqrt(x) + 2  y = 0$$
+
+$$f(x) = \sum_{i=0}^{n} \frac{a_i}{1+x}(1)$$
+
+$$
+\begin{equation}
+    f(x) = w² 
+\end{equation}
+$$
+
+$$\color{red}{x²}$$
+
+$$
+\begin{equation}
+\begin{matrix}
+1 & 2 & 3\\
+a & b & c
+\end{matrix}
+\end{equation}
+$$
+
+$$
+\begin{pmatrix}
+1 & 2 & 3\\
+a & b & c
+\end{pmatrix}
+$$
+
+$$ f(x) = \int_{-\infty}^\infty \hat f(\xi)\,e^{2 \pi \xi x} \,d\xi $$
+
+$$
+\usepackage{tikz}
+
+\begin{tikzpicture}
+\draw (0,0)--(10,0);
+\filldraw (0,0) circle (3pt);
+\end{tikzpicture}
+$$
