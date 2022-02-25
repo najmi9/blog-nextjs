@@ -36,10 +36,8 @@ const Contact = () => {
           </div>
 
             <div className="col-lg-7 d-flex align-items-stretch">
-              <iframe width="844" height="498" id="gmap_canvas" src="https://maps.google.com/maps?q=Chichaoua%20sidi%20el%20mokhtar&t=&z=9&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" />
+              <iframe width="844" height="498" id="gmap_canvas" src="https://maps.google.com/maps?q=Chichaoua%20sidi%20el%20mokhtar&t=&z=9&ie=UTF8&iwloc=&output=embed" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" />
             </div>
-
-
         </div>
 
       </div>

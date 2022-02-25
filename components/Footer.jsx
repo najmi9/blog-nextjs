@@ -5,10 +5,7 @@ const Footer = () => {
         <footer id="footer">
         <div className="container">
           <div className="copyright">
-            &copy; Copyright <strong><span>iPortfolio</span></strong>
-          </div>
-          <div className="credits">
-            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            &copy; Copyright <strong><span>Imad Najmi</span></strong>
           </div>
         </div>
       </footer>

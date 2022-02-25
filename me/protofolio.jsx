@@ -15,7 +15,7 @@ const Protofolio = () => {
               <h2>Portfolio</h2>
             </div>
 
-            <div className="row">
+            <div className="row" data-aos="fade-in">
               <Col>
                 <GvetMigration />
               </Col>

@@ -9,12 +9,12 @@ export default function Blog ({data, all}) {
 
     return (
         <section id="blog" className="blog">
-            <div className="container bg-light">
+            <div className="container">
                 <div className="section-title">
                     <h2>Blogs</h2>
                     <p>Here Some articles that write in my free time.</p>
                 </div>
-                <div className="row g-2 d-flex align-items-center">
+                <div className="row g-2 d-flex align-items-center" data-aos="fade-in">
                     {listItems.map((post, i) => {
                         const Li = <div className="col-lg-4 col-md-6" key={'p'+i}><BlogPost post={post} /></div>;
                         if (all) {

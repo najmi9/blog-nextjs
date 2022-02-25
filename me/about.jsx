@@ -55,11 +55,11 @@ const About = () => {
           </div>
         </div>
 
-        {/* <div className="d-flex justify-content-center">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/WJL9VCwBPDc" title="YouTube video player" frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+        <div className="d-flex justify-content-center">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/WJL9VCwBPDc" title="YouTube video player" frameBorder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen>
           </iframe>
-        </div> */}
+        </div> 
       </div>
     </section>
     );
