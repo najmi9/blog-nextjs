@@ -1,6 +1,7 @@
 import React, { } from 'react';
 import Image from 'next/image';
 import img from '../public/imgs/profile/profile-img.jpg';
+import { FACEBOOK, GITHUB, INSTAGRAM, LINKED_IN, Twitter } from '../config';
 
 const Header = () => {
     return(
@@ -12,11 +13,11 @@ const Header = () => {
                         <Image src={img} placeholder="blur" width="100%" height="100%" alt="Imad Najmi" className="img-fluid rounded-circle" /> 
                         <h1 className="text-light"><a href="index.html">Imad Najmi</a></h1>
                         <div className="social-links mt-3 text-center">
-                        <a href="#" className="twitter"><i className="bx bxl-twitter"></i></a>
-                        <a href="#" className="facebook"><i className="bx bxl-facebook"></i></a>
-                        <a href="#" className="instagram"><i className="bx bxl-instagram"></i></a>
-                        <a href="#" className="google-plus"><i className="bx bxl-skype"></i></a>
-                        <a href="#" className="linkedin"><i className="bx bxl-linkedin"></i></a>
+                        <a href={Twitter} className="twitter"><i className="bx bxl-twitter"></i></a>
+                        <a href={FACEBOOK} className="facebook"><i className="bx bxl-facebook"></i></a>
+                        <a href={INSTAGRAM} className="instagram"><i className="bx bxl-instagram"></i></a>
+                        <a href={GITHUB} className="google-plus"><i className="bx bxl-github"></i></a>
+                        <a href={LINKED_IN} className="linkedin"><i className="bx bxl-linkedin"></i></a>
                         </div>
                     </div>
 
