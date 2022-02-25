@@ -4,8 +4,7 @@ import Work from '../../components/Work';
 const Calculators = () => {
     const images = [
         {
-            original: "imgs/works/calculators/4.png",
-            originalAlt: "Acceleration",
+            original: "imgs/work/calculators/4.png",
         },
         {
             original: "imgs/work/calculators/5.png"
@@ -29,7 +28,7 @@ const Calculators = () => {
     return (
         <Work
             images={images}
-            title="Physics accelerators with javascript"
+            title="Physics accelerators with JS"
             link='https://nineplanets.org/tools/acceleration-calculator/'
             tags={['HTML', 'Javascript', 'Bulma', 'CSS5', 'ES6']}
             date="11:25 20/04/2019"

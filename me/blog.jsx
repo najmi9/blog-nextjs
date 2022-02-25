@@ -11,7 +11,7 @@ export default function Blog ({data, all}) {
         <section id="blog" className="blog">
             <div className="container bg-light">
                 <div className="section-title">
-                    <h2>Blogs {listItems.length}</h2>
+                    <h2>Blogs</h2>
                     <p>Here Some articles that write in my free time.</p>
                 </div>
                 <div className="row g-2 d-flex align-items-center">
