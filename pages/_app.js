@@ -6,7 +6,6 @@ import '../styles/Work.css'
 export default function MyApp({ Component, pageProps }) {
   return (
     <Layout standalone={pageProps.standalone}>
-        {/*<Script src="/js/vendor/purecounter/purecounter.js"></Script>*/}
         <Script src="/js/vendor/aos/aos.js"></Script>
         <Script src="/js/vendor/bootstrap/js/bootstrap.bundle.min.js"></Script>
         <Script src="/js/vendor/glightbox/js/glightbox.min.js"></Script>
