@@ -5,7 +5,7 @@ import Skills from '../me/skills';
 import Resume from '../me/resume';
 import Contact from '../me/contact';
 import Testiomonials from '../me/testiomonials';
-/* import Protofolio from '../me/protofolio'; */
+import Protofolio from '../me/protofolio';
 import Services from '../me/services';
 import Hero from '../me/hero';
 
@@ -23,10 +23,11 @@ export default function Home({data}) {
         <About />
         {/* <Facts /> */}
         <Skills />
-        <Resume />
-        {/* <Protofolio /> */}
-        <Services />
-        <Testiomonials />
+        {/* <Resume /> */}
+         <Protofolio /> 
+        {/* <Services /> */}
+        {/* <Testiomonials /> */}
+        
         <Contact />
         <Blog data={data}/>
       </main>
