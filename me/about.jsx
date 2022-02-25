@@ -1,5 +1,5 @@
 import Image from 'next/image';
-// import img from '../public/imgs/korimi.jpg';
+import img from '../public/imgs/profile/profile-img.jpg';
 
 const About = () => {
 
@@ -18,8 +18,7 @@ const About = () => {
 
         <div className="row">
           <div className="col-lg-4" data-aos="fade-right">
-{/*             <Image src={img} className="img-fluid" alt="Imad Najmi" />
- */}          </div>
+          <Image src={img} className="img-fluid" alt="Imad Najmi" /></div>
           <div className="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
             <h3>Symfony PHP Developer.</h3>
             <p className="fst-italic">
