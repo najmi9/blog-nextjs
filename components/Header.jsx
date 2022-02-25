@@ -1,6 +1,6 @@
 import React, { } from 'react';
-// import Image from 'next/image';
-// import img from '../public/imgs/me.jpg';
+import Image from 'next/image';
+import img from '../public/imgs/profile/profile-img.jpg';
 
 const Header = () => {
     return(
@@ -9,7 +9,7 @@ const Header = () => {
             <header id="header">
                 <div className="d-flex flex-column">
                     <div className="profile text-center">
-                        {/* <Image src={img} placeholder="blur" width="100%" height="100%" alt="Imad Najmi" className="img-fluid rounded-circle" /> */}
+                        <Image src={img} placeholder="blur" width="100%" height="100%" alt="Imad Najmi" className="img-fluid rounded-circle" /> 
                         <h1 className="text-light"><a href="index.html">Imad Najmi</a></h1>
                         <div className="social-links mt-3 text-center">
                         <a href="#" className="twitter"><i className="bx bxl-twitter"></i></a>
