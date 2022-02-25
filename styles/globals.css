@@ -1,0 +1,23 @@
+
+
+.left-btn, .right-btn {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+}
+
+.left-btn:hover, .right-btn:hover{
+    background-color: lightslategray;
+} 
+
+.left-btn i, .right-btn i{
+    font-weight: bolder;
+}
+
+.left-btn {
+    left: 0;
+}
+
+.right-btn {
+    right: 0;
+}
