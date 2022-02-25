@@ -2,11 +2,8 @@ import Head from 'next/head'
 import About from '../me/about';
 import Blog from '../me/blog';
 import Skills from '../me/skills';
-import Resume from '../me/resume';
 import Contact from '../me/contact';
-import Testiomonials from '../me/testiomonials';
 import Protofolio from '../me/protofolio';
-import Services from '../me/services';
 import Hero from '../me/hero';
 
 export default function Home({data}) {
@@ -21,13 +18,8 @@ export default function Home({data}) {
       <Hero />
       <main id="main">
         <About />
-        {/* <Facts /> */}
         <Skills />
-        {/* <Resume /> */}
-         <Protofolio /> 
-        {/* <Services /> */}
-        {/* <Testiomonials /> */}
-        
+        <Protofolio /> 
         <Contact />
         <Blog data={data}/>
       </main>
