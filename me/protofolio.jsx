@@ -16,7 +16,7 @@ const Protofolio = () => {
             </div>
 
             <div className="row" data-aos="fade-in">
-              <Col>
+              {/* <Col>
                 <GvetMigration />
               </Col>
               <Col>
@@ -24,7 +24,7 @@ const Protofolio = () => {
               </Col>
               <Col>
                 <GvetAdmin />
-              </Col>
+              </Col> */}
               <Col>
                 <Calculators/>
               </Col>
