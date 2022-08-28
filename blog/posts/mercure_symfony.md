@@ -5,12 +5,12 @@ slug: mercure_symfony
 ---
 
 
-<h2 class="article-title">Mercure Protocol With Symfony And Api Platform</div>
-
 ## Demo and Inspiration  :
 The idea of this article is very simple, by using mercure and symfony, and when an admin publish a notification all connected users will be notified by the message of the admin in real time.
 
 ![Mercure Notitfication Demo](/imgs/blog/mercure_demo.png)
+
+<img src="/imgs/blog/mercure_demo.png" />
 
 ## Mercure Protocol :
 [Mercure Protocol](https://mercure.rocks/docs/mercure) is a protocol allowing to push data updates to web browsers and other HTTP clients in a convenient, fast, reliable and battery-efficient way. It is especially useful to publish async and real-time updates of resources served through web APIs, to reactive web and mobile apps.
@@ -97,10 +97,8 @@ create one programmatically just in a few moments.
 
 ```python
 MERCURE_PUBLISH_URL=http://localhost:3000/.well-known/mercure #if you're running the hub directly
-
 MERCURE_URL=https://mercure/.well-known/mercure #if you're using docker
 MERCURE_PUBLIC_URL=https://mercure/.well-known/mercure #if you're using docker
-
 MERCURE_PUBLISHER_JWT_KEY="random_mercure_publisher_jwt_key"
 MERCURE_SUBSCRIBER_JWT_KEY="random_mercure_subscriber_jwt_key"
 ```
@@ -113,7 +111,6 @@ POST /.well-known/mercure HTTP/1.1
 Host: example.com
 Content-Type: application/x-www-form-urlencoded
 Authorization: Bearer $JWT
-
 topic=https://example.com/foo&data=the%20content
 ```
 In Symfony the Mercure Component provides an **Update** value object representing the update to publish. It also provides a Publisher service to dispatch updates to the Hub.
