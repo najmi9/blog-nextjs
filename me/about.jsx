@@ -40,7 +40,7 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div className="row">
+        <div className="row d-flex align-items-center">
           <div className="col-lg-4" data-aos="fade-right">
             <img src='imgs/profile/profile-img.jpg' className="img-fluid" alt="Imad Najmi" />
           </div>
@@ -73,16 +73,17 @@ const About = () => {
               </div>
             </div>
             <p>
-            You can see my Upwork profile: <a href="https://www.upwork.com/freelancers/~01a391792ec0fb762e">@here.</a>
+              You can see my Upwork profile: <a href="https://www.upwork.com/freelancers/~01a391792ec0fb762e" target='_blank' rel='noreferrer'>@here.</a> <br/>
+              Or on Youtube: <a href="https://www.youtube.com/watch?v=WJL9VCwBPDc" title='Imad Najmi' target='_blank' rel='noreferrer'>@here.</a>
             </p>
           </div>
         </div>
 
-        <div className="d-flex justify-content-center mt-2">
+        {/* <div className="d-flex justify-content-center mt-2">
           <iframe width="560" height="315" src="https://www.youtube.com/embed/WJL9VCwBPDc" title="Imad Najmi SYmfony Developer" frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen>
           </iframe>
-        </div>
+        </div> */}
       </div>
     </section>
     );

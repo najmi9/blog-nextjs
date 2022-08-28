@@ -1,12 +1,21 @@
 import React from "react"
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import prism from 'react-syntax-highlighter/dist/cjs/styles/hljs/monokai-sublime';
-
+import vs2015 from 'react-syntax-highlighter/dist/cjs/styles/hljs/vs2015'
 const CodeBlock = ({className, children}) => {
 
     return (
-        <SyntaxHighlighter className={className} language={className} showLineNumbers={false}
-        showInlineLineNumbers={false} wrapLines={false} style={prism}>
+        <SyntaxHighlighter
+            className={className}
+            language={className}
+            showLineNumbers={true}
+            showInlineLineNumbers={false}
+            wrapLines={false}
+            style={vs2015}
+            PreTag='p'
+            startingLineNumber={1}
+            useInlineStyles={true}
+            wrapLongLines={false}
+        >
             {children}
         </SyntaxHighlighter>
     );
