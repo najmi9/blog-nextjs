@@ -10,7 +10,7 @@ const Chat = () => {
     return (
         <Work
             images={images}
-            title="Real Time Chat"
+            title="Real Time Chat Built With React JS and Mercure"
             link='https://github.com/najmi9/mercure_symfony_blog'
             tags={['Symfony', 'Twig', 'Doctrine ORM', 'Messenger', 'Bootstrap', 'Mercure', 'React', 'SSE']}
             date="22:25 10/01/2021"
