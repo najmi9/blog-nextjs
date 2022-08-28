@@ -14,7 +14,7 @@ The simplest way to integrate Algolia search is using the bundle **Algolia Searc
 
 The final result of this article is smillar to this image.
 
-![Algolia With Symfony](imgs/blog/algolia/algolia.png)
+![Algolia With Symfony](/imgs/blog/algolia/algolia.png)
 
 You can see the source code in the [repository](https://github.com/najmi9/symfony-algolia), also in the repository I implemented the client side search with Javascript using Webpack Encore and algoliasearch package.
 

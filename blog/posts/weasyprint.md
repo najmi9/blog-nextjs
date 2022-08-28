@@ -24,7 +24,7 @@ sudo mv -fr ~/.local/bin/weasyprint /usr/bin
 ```
 Now when you run the command `weasyprint --version` you should get something like this:
 
-![WeasyPrint Version](imgs/blog/weasyprint/version.png)
+![WeasyPrint Version](/imgs/blog/weasyprint/version.png)
 
 You can install WeasyPrint also by
 ```bash

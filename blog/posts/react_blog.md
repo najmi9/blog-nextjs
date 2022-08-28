@@ -21,7 +21,7 @@ In this article we will talk about how to render markdown in react using [react-
 Finaly, we will have a simple home page contains two links to two posts. each post has some code content in PHP, Python and JSX languages.
 You can check the source code on [github](https://github.com/najmi9/react-blog-syntaxhilighter) directly.
 
-![React Syntax Highlighter](imgs/blog/demo.png)
+![React Syntax Highlighter](/imgs/blog/demo.png)
 
 ## 2.Installation :
 ```bash
@@ -32,7 +32,7 @@ cd my-blog
 
 ### 3. The sturcture of folders :
 
-![Symfony Folder Structure](imgs/blog/dirs.png)
+![Symfony Folder Structure](/imgs/blog/dirs.png)
 
 First, let's create a new folder `pages` contains all pages, then create a home page file called `home.jsx` contains the code below :
 

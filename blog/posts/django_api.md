@@ -167,7 +167,7 @@ Now we can run the server, and interact with our API on port 80.
 python manage.py runserver
 ```
 Let us create some random product to manipulate with.
-![create product with api](imgs/blog/django1.png)
+![create product with api](/imgs/blog/django1.png)
 
 ### Front end with React
 
