@@ -144,7 +144,7 @@ So Now if you call any method from the `LikeRepository` the doctrine hit databas
         ]);
     }
 ```
-![doctrine second level cache in symfony](imgs/blog/doctrine-cache/no-query.png)
+![doctrine second level cache in symfony](/imgs/blog/doctrine-cache/no-query.png)
 
 ####  How to clear and invalidate the cache?
 
