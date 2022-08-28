@@ -9,7 +9,7 @@ const About = () => {
         <div className="section-title">
           <h2>About</h2>
           <div className="row">
-            <div className="col-lg-6">
+            <div className="col-lg-6" data-aos="fade-right">
               <ul>
                 <li>I've been doing web development every day since 2019.</li>
                 <li>I use PHP, <a href="https://symfony.com/">Symfony</a> and <b>Javascript</b>.</li>
@@ -20,7 +20,7 @@ const About = () => {
                 <li>Familiar with <b>PHPUnit</b> and functional tests</li>
               </ul>
             </div>
-            <div className="col-lg-6">
+            <div className="col-lg-6" data-aos="fade-left">
               <div className="d-flex align-items-center justify-content-between">
                 <img src="imgs/symfony_stack/sf.svg"  width={60} height={60} alt="Symfony Framework" />
                 <img src="imgs/symfony_stack/php.svg"  alt="PHP" />
