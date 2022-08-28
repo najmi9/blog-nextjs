@@ -59,7 +59,7 @@ wget https://github.com/dunglas/mercure/releases/download/v0.10.4/mercure_0.10.4
 tar -xvzf mercure/mercure_0.10.4_Linux_x86_64.tar.gz
 ```
 
-Or you can use docker, this is an example of `docker-compose.yaml` file:
+Or you can use docker, this is an example of **docker-compose.yaml** file:
 
 ```yaml
 version: '3.7'
@@ -90,9 +90,9 @@ volumes:
   mercure_config:
 ```
 
-Set the URL of your hub as the value of the `MERCURE_PUBLISH_URL` environment variable. The `.env` file of your project has been updated by the Flex recipe to provide example values. Set it to the URL of the Mercure Hub (http://localhost:3000/.well-known/mercure by default).
+Set the URL of your hub as the value of the **MERCURE_PUBLISH_URL** environment variable. The *.env* file of your project has been updated by the Flex recipe to provide example values. Set it to the URL of the Mercure Hub (http://localhost:3000/.well-known/mercure by default).
 
-Set a secret key for your Mercure Hub in `.env` file, by default is equal to `!ChangeMe!` you should use a strong one in production. For the `MERCURE_JWT_TOKEN` leave it as it because we will
+Set a secret key for your Mercure Hub in *.env* file, by default is equal to *!ChangeMe!* you should use a strong one in production. For the *MERCURE_JWT_TOKEN* leave it as it because we will
 create one programmatically just in a few moments.
 
 ```python
@@ -142,7 +142,7 @@ class MessageController extends AbstractController
      */
     public function index(Request $request, MessageBusInterface $bus):Response
     {
-        $data = [...];
+        $data = [...]; // Get the data from the request
 
         $update = new Update(
             ['http://my-website.com/notify'],
@@ -152,7 +152,7 @@ class MessageController extends AbstractController
 
         $bus->dispatch($update);
 
-        return $this->json(['message'=>'published']);
+        return $this->json(['message' => 'published']);
     }
 ```
 
@@ -221,7 +221,7 @@ We listen to that in javascript by a classic listener:
 </script>
 {% endblock %}
  ```
-From the `admin` route we will publish notification to all connected devices.
+From the **admin** route we will publish notification to all connected devices.
 
 ```php
 <?php
@@ -244,7 +244,7 @@ class AdminController extends AbstractController
 }
 ```
 
-With a POST ajax request to ```/message``` we dispatch an update for the topic ```http://my-website.com/notify```.
+With a POST ajax request to **/message** we dispatch an update for the topic **http://my-website.com/notify**.
 
 ```html
 {# templates/admin/index.html.twig #}
@@ -276,7 +276,7 @@ With a POST ajax request to ```/message``` we dispatch an update for the topic `
 ```
 
 ## Authorization
-There is two methods of authorization to private updates, one by **Authorization HTTP header**, and the other by **Cookies** when the client is a web browser and uses the same domain or subdomain of the Hub URl, Cookies are automatically sent by the browsers to the hub when opening an EventSource connection if the `withCredentials` attribute is set to `true`.
+There is two methods of authorization to private updates, one by **Authorization HTTP header**, and the other by **Cookies** when the client is a web browser and uses the same domain or subdomain of the Hub URl, Cookies are automatically sent by the browsers to the hub when opening an EventSource connection if the **withCredentials** attribute is set to **true**.
 
 ```js
 const eventSource = new EventSource(hub, {
@@ -319,14 +319,14 @@ use Lcobucci\JWT\Builder;
 class JWTProvider
 {
     /* publisher secret or the MERCURE_JWT_KEY*/
-	private string $publisher_secret;
+    private string $publisher_secret;
 
-	function __construct(string $publisher_secret)
-	{
-	  	$this->publisher_secret = $publisher_secret;
-	}
+    function __construct(string $publisher_secret)
+    {
+          $this->publisher_secret = $publisher_secret;
+    }
 
-	 public function __invoke(): string
+     public function __invoke(): string
     {
         return (new Builder())
             ->set('mercure', ['publish'=>['http://my-website.com/notify']])
@@ -348,7 +348,7 @@ mercure:
 
 ```
 
-Now you can remove the `MERCURE_JWT_TOKEN` in `.env` file because it will be generated programmatically.
+Now you can remove the *MERCURE_JWT_TOKEN* in *.env* file because it will be generated programmatically.
 
 This method is especially convenient when using tokens having an expiration date, that can be refreshed programmatically.
 
@@ -368,22 +368,23 @@ use App\Entity\User;
 
 class MercureCookieGenerator
 {
-	private string $subscriber_secret;
+    private string $subscriber_secret;
 
-	function __construct(string $subscriber_secret)
-	{
-		$this->subscriber_secret = $subscriber_secret;
-	}
+    function __construct(string $subscriber_secret)
+    {
+        $this->subscriber_secret = $subscriber_secret;
+    }
 
-	public function generate(): string
-	{
+    public function generate(): string
+    {
         $token = (new Builder())
             ->set('mercure', ['subscribe'=>['http://my-website.com/notify']])
             ->sign(new Sha256(), $this->subscriber_secret)
             ->getToken()
         ;
+
         return "mercureAuthorization={$token}; Path=/.well-known/mercure; HttpOnly";
-	}
+    }
 }
 ```
 
@@ -491,6 +492,8 @@ class Product
 }
 ```
 
+___
+
 ## Author : Imad NAJMI
-## Github  : [I created a chat with mercure here.](https://github.com/najmi9/mercure_symfony_blog)
+## Github  : I created a chat with mercure [ here.](https://github.com/najmi9/mercure_symfony_blog)
 ## Also you see a working example about mercure : [here.](https://github.com/najmi9/mercure)
