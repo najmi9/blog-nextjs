@@ -37,7 +37,7 @@ const Work = ({images, text, title, tags=[], date, link="#"}) => {
                     <div className="work-description">{text}</div>
                     <div className="mt-1">
                         The website link :
-                        <a className="btn btn-sm text-primary" href={link} target="_blank">Here!</a>
+                        <a className="btn btn-sm text-primary" href={link} rel="noreferrer" target="_blank">Here!</a>
                     </div>
                     <div className="tags">
                         {
