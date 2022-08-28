@@ -21,9 +21,9 @@ In this article we will talk about how to render markdown in react using [react-
 Finaly, we will have a simple home page contains two links to two posts. each post has some code content in PHP, Python and JSX languages.
 You can check the source code on [github](https://github.com/najmi9/react-blog-syntaxhilighter) directly.
 
-![React Syntax Highlighter](/imgs/demo.png)
+![React Syntax Highlighter](imgs/blog/demo.png)
 
-## 2.Installation : 
+## 2.Installation :
 ```bash
 # create a react app called my-blog
 npx create-react-app bm-blog
@@ -32,9 +32,9 @@ cd my-blog
 
 ### 3. The sturcture of folders :
 
-![Symfony Folder Structure](/imgs/dirs.png)
+![Symfony Folder Structure](imgs/blog/dirs.png)
 
-First, let's create a new folder `pages` contains all pages, then create a home page file called `home.jsx` contains the code below : 
+First, let's create a new folder `pages` contains all pages, then create a home page file called `home.jsx` contains the code below :
 
 ```jsx
 //src/pages/home.js
@@ -81,7 +81,7 @@ const App = () => {
     return (
     <Router>
       <Switch>
-        <Route path="/" component= { Home} exact />     
+        <Route path="/" component= { Home} exact />
         <Route path="/blog/post1" component={Post1} />
         <Route path="/blog/post2" component={Post2} />
       </Switch>
@@ -162,7 +162,7 @@ import React, { useEffect, useState } from 'react';
 //Renders Markdown as pure React components.
 import ReactMarkdown from 'react-markdown';
 
-//Syntax highlighting component 
+//Syntax highlighting component
 import CodeBlock from "./CodeBlock.jsx";
 
 const MarkDownParser = ({content}) => {
@@ -180,12 +180,12 @@ const MarkDownParser = ({content}) => {
 	}, [content]);
     return (
     	    <div className="container">
-                <ReactMarkdown 
+                <ReactMarkdown
                 source={markdown}
                 // every tag <pre> will be changed to this component to display // the styled code
                  renderers={{ code: CodeBlock }}
                 />
-            </div>      
+            </div>
     );
 };
 export default MarkDownParser;

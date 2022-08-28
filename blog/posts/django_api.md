@@ -6,7 +6,7 @@ slug: django_api
 
 <h2 class="article-title"> Django Rest Framework ApiView and React JS</h2>
 
-### Introduction 
+### Introduction
 In this artcile we will create a simple rest api and use it in React JS, in the backend we use [Django](https://www.djangoproject.com/) that is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. Built by experienced developers, it takes care of much of the hassle of Web development, so you can focus on writing your app without needing to reinvent the wheel. [Django REST framework](https://www.django-rest-framework.org) is a powerful and flexible toolkit for building Web APIs.
 
 ### Get Started
@@ -167,7 +167,7 @@ Now we can run the server, and interact with our API on port 80.
 python manage.py runserver
 ```
 Let us create some random product to manipulate with.
-![create product with api](/imgs/django1.png)
+![create product with api](imgs/blog/django1.png)
 
 ### Front end with React
 
@@ -212,7 +212,7 @@ const App = () => {
                   {product.title} with {product.price} ${" "}
                 </h3>
                 <img src={product.image} alt={product.title} />
-              </div>                                                                                                                                                                                                                                                                               
+              </div>
             </li>
           ))}
         </ul>
