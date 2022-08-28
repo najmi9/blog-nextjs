@@ -1,10 +1,11 @@
 import React from 'react';
 import Calculators from './works/calculators';
 import Chat from './works/chat';
-import GvetAdmin from './works/gvet_admin';
+// import GvetAdmin from './works/gvet_admin';
 import GVETMarketplace from './works/gvet_marketplace';
 import GvetMigration from './works/gvet_migration';
 import ShopSymfony from './works/symfony_shop';
+import YoutubeDl from './works/youtube_dl';
 
 const Protofolio = () => {
 
@@ -14,14 +15,14 @@ const Protofolio = () => {
             <div className="section-title">
               <h2>Portfolio</h2>
             </div>
-
             <div className="row" data-aos="fade-in">
-              {/* <Col>
+              <Col>
                 <GvetMigration />
               </Col>
               <Col>
                 <GVETMarketplace />
               </Col>
+              {/*
               <Col>
                 <GvetAdmin />
               </Col> */}
@@ -33,6 +34,9 @@ const Protofolio = () => {
               </Col>
               <Col>
                 <ShopSymfony/>
+              </Col>
+              <Col>
+                <YoutubeDl/>
               </Col>
             </div>
           </div>

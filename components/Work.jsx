@@ -12,13 +12,13 @@ const RightNav = (props) => {
 const Work = ({images, text, title, tags=[], date, link="#"}) => {
     const [state, setState] = useState('IDLE')
 	return(
-		<div className="card">
+		<div className="card border bg-light h-100">
             <div className="card-header">
                 <ImageGallery showNav={true} showBullets={true} infinite={true} showPlayButton={false}
                 slideDuration={10} items={images}
                 renderLeftNav={(onClick, disabled) => (
                     <LeftNav onClick={onClick} disabled={disabled} />
-                  )} 
+                  )}
                 renderRightNav={(onClick, disabled) => (
                     <RightNav onClick={onClick} disabled={disabled} />
                   )}
@@ -36,13 +36,13 @@ const Work = ({images, text, title, tags=[], date, link="#"}) => {
                     </button>
                     <div className="work-description">{text}</div>
                     <div className="mt-1">
-                        The website link : 
-                        <a className="btn btn-sm text-primary" href={link}>Here!</a>
-                    </div> 
+                        The website link :
+                        <a className="btn btn-sm text-primary" href={link} target="_blank">Here!</a>
+                    </div>
                     <div className="tags">
                         {
                             tags.map((e, i) => (<span key={i} className="tag">
-                                #{e} 
+                                #{e}
                             </span>
                             ))
                         }
