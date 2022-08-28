@@ -7,7 +7,7 @@ slug: react_symfony
 <h2 class="article-title">
 How to create mrdern website with Symfony Api-Platform and React JS?
 </h2>
-![Symfony React Api Platform](/imgs/symfony-react.png)
+![Symfony React Api Platform](imgs/symfony-react.png)
 
 ### Prerequisites :
 
@@ -17,7 +17,7 @@ Basic knowledge of building applications with [React](https://reactjs.org), [Sym
 ```bash
 composer create-project symfony/website-skeleton my-app
 ```
-#### 2.Install the bundler WebPack encore via composer 
+#### 2.Install the bundler WebPack encore via composer
 Webpack Encore is a simpler way to integrate Webpack into your application. It wraps Webpack, giving you a clean & powerful API for bundling JavaScript modules, pre-processing CSS & JS and compiling and minifying assets. Encore gives you professional asset system that’s a delight to use.
 
 ```bash
@@ -45,7 +45,7 @@ DATABASE_URL=mysql://user:password@127.0.0.1:3306/database_name?serverVersion=5.
 To do this copy the paste the fllowing code in your file, or try to create the same thing by CLI if you know what you do.
 ```bash
 php bin/console make:entity Product
-```  
+```
 
 ```php
 <?php
@@ -129,20 +129,20 @@ class Product
 
 we add `@ApiResource` annotation to tell Api Platform bundle that we want to add a new resource to our api that we will use in our react frontend.
 
-![Product source](/imgs/product_api.png)
+![Product source](imgs/blog/product_api.png)
 
 
 #### 7. Create our table in database.
 Make sure that you're in the working folder `my-app`.
 ```bash
-#create database 
+#create database
 php bin/console doctrine:database:create
 #make migration to generate SQl code
-php bin/console  make:migration 
+php bin/console  make:migration
 #create our table in database
 php bin/console doctrine:migrations:migrate
 #or run this command to make migration and create the table .
-php bin/console --force doctrine:schema:update 
+php bin/console --force doctrine:schema:update
 #run the php server on port 80
 php -S localhost:8000 -t public
 # this command is to generate css and js files to swagger documentation
@@ -150,7 +150,7 @@ yarn encore dev
 ```
 After creating the database and run the server, we will check the route http://localhost:8000/api which has a basic swagger documentation through it we will make two POST requests to create two products, in order to have some data to manipulate with.
 
-![Product source](/imgs/product_post.png)
+![Product source](imgs/blog/product_post.png)
 
 #### 8.Configure webpack encore
 first let us add some dependencies with yarn, you can use npm too and install React and ReactDOM.
@@ -173,7 +173,7 @@ Encore
 <!DOCTYPE html>
 <html>
     <head>
-        
+
 
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
@@ -183,9 +183,9 @@ Encore
         {% endblock %}
     </head>
     <body>
-        {% block body %} 
-        {% endblock %} 
- 
+        {% block body %}
+        {% endblock %}
+
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
 
@@ -251,7 +251,7 @@ ReactDOM.render(<App />, document.getElementById('root'));
 php bin/console make:controller DefaultController
 ```
 
-#### 13. Edit our controller to add the react routing by default and render our template 
+#### 13. Edit our controller to add the react routing by default and render our template
 
 ```php
 <?php

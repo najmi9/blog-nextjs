@@ -8,7 +8,7 @@ const AllPosts = ({data}) => {
             <Head>
                 <title>Imad Najmi| Blog</title>
                 <meta content="Imad Najmi: Blog about web technologies" name="description" />
-                <meta content="Imad Najmi, blog, PHP, web" name="keywords" />
+                <meta content="Imad Najmi, Blog, PHP, web" name="keywords" />
             </Head>
             <Blog data={data} all={true}/>
         </>
@@ -20,9 +20,9 @@ export default AllPosts;
 export async function getStaticProps() {
     const fs = require("fs");
     const blogs = fs.readdirSync(`${process.cwd()}/blog/posts`, 'utf-8').filter(fn => fn.endsWith(".md"));
-  
+
     const data = blogs.map(blog => fs.readFileSync(`${process.cwd()}/blog/posts/${blog}`, {encoding: "utf-8"}));
-  
+
     return {
         props: {
             data,

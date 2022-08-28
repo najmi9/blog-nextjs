@@ -15,18 +15,18 @@ WeasyPrint is based on Python, so you must have python installed in your server,
 You can read more about WeasyPrint [here!](https://doc.courtbouillon.org/weasyprint/stable/first_steps.html).
 
 ## Installation
-You can install WeasyPrint by the python package manager `pip` or by `apt` the package manager of linux, you can see [here](https://doc.courtbouillon.org/weasyprint/stable/first_steps.html) form more options, for me I installed like this: 
+You can install WeasyPrint by the python package manager `pip` or by `apt` the package manager of linux, you can see [here](https://doc.courtbouillon.org/weasyprint/stable/first_steps.html) form more options, for me I installed like this:
 ```bash
 sudo apt-get update
 sudo apt-get install libxml2-dev libxslt-dev libpango1.0-dev python3-pip build-essential python3-dev python3-pip python3-setuptools python3-wheel python3-cffi libcairo2 libpango-1.0-0 libpangocairo-1.0-0 libgdk-pixbuf2.0-0 libffi-dev shared-mime-info
-sudo pip3 install WeasyPrint 
+sudo pip3 install WeasyPrint
 sudo mv -fr ~/.local/bin/weasyprint /usr/bin
 ```
 Now when you run the command `weasyprint --version` you should get something like this:
 
-![WeasyPrint Version](/imgs/blog/weasyprint/version.png)
+![WeasyPrint Version](imgs/blog/weasyprint/version.png)
 
-You can install WeasyPrint also by 
+You can install WeasyPrint also by
 ```bash
 sudo apt-get install WeasyPrint
 ```
@@ -54,7 +54,7 @@ In my Symfony project I always create a specific folder for services like this c
 ```
 - bin
 - config
-- public 
+- public
 - src
     - Controller
     - Entity
@@ -150,12 +150,12 @@ class WeasyPrintPdfGenerator implements PdfGeneratorInerface
         return $this->output;
     }
 }
-``` 
+```
 The variable *$binary* is the path of the WeasyPrint binary.
 
 ```js
 #.env
-WEASYPRINT_PATH=weasyprint 
+WEASYPRINT_PATH=weasyprint
 ```
 
 Don't forget to tell service container about the binary path in `services.yaml` file.
@@ -165,7 +165,7 @@ Don't forget to tell service container about the binary path in `services.yaml` 
 services:
 
     ...
-    
+
     App\Infrastructure\Pdf\WeasyPrintPdfGenerator:
       arguments:
         $binary: '%env(WEASYPRINT_PATH)%'
@@ -265,7 +265,7 @@ class ProductController extends AbstractController
 ```
 
 So now you can generate the awesome PDFs by using this beautifull python library in the next projects.
- 
+
  ___
 
 Author: **Imad NAJMI**
