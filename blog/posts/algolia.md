@@ -8,13 +8,13 @@ slug: algolia
 
 ## Introduction
 
-[Algolia](https://www.algolia.com) is a hosted search engine, offering full-text, numerical, and faceted search, capable of delivering real-time results from the first keystroke. Algolia’s powerful API lets you quickly and seamlessly implement search within your websites and mobile applications. 
+[Algolia](https://www.algolia.com) is a hosted search engine, offering full-text, numerical, and faceted search, capable of delivering real-time results from the first keystroke. Algolia’s powerful API lets you quickly and seamlessly implement search within your websites and mobile applications.
 
 The simplest way to integrate Algolia search is using the bundle **Algolia SearchBundle**. This bundle provides an easy way to integrate Algolia Search into your Symfony application (using Doctrine). It allows you to index your data, keep it in sync, and search through it.
 
-The final result of this article is smillar to this image. 
+The final result of this article is smillar to this image.
 
-![Algolia With Symfony](/imgs/blog/algolia/algolia.png)
+![Algolia With Symfony](imgs/blog/algolia/algolia.png)
 
 You can see the source code in the [repository](https://github.com/najmi9/symfony-algolia), also in the repository I implemented the client side search with Javascript using Webpack Encore and algoliasearch package.
 
@@ -186,7 +186,7 @@ symfony console search:import
         $isEnabled=  $request->query->getInt('isEnabled', 0);
 
         $filters = "isEnabled = {$isEnabled}";
-       
+
         ($min > 0 && $max > $min) ? $filters .= " AND (price > {$min})": null;
         ($max > 0 && $min < $max) ? $filters .= " AND (price < {$max})" : null;
 
@@ -195,7 +195,7 @@ symfony console search:import
             'page' => $page,
             'hitsPerPage' => 10,
             'attributesToRetrieve' => ['name', 'description', 'price', 'isEnabled'],
-            'filters' => $filters, 
+            'filters' => $filters,
         ]);
 
         return $this->render('home/search.html.twig', [
@@ -312,7 +312,7 @@ import algoliasearch from 'algoliasearch/lite';
 (function () {
     document.querySelector('input#inputId').onkeyup = async e => {
         // You should use throttle function to avoid many calls at one time.
-        // See the source code 
+        // See the source code
         const q = e.target.value
         const res = await search(q);
 
@@ -365,21 +365,21 @@ You can use a throttle function with a delay to handle the input change so you a
 ```js
 // The function is from this link : https://gist.github.com/beaucharman/e46b8e4d03ef30480d7f4db5a78498ca
 function throttle(callback, wait, immediate = false) {
-    let timeout = null 
+    let timeout = null
     let initialCall = true
-    
+
     return function() {
       const callNow = immediate && initialCall
       const next = () => {
         callback.apply(this, arguments)
         timeout = null
       }
-      
-      if (callNow) { 
+
+      if (callNow) {
         initialCall = false
         next()
       }
-  
+
       if (!timeout) {
         timeout = setTimeout(next, wait)
       }
@@ -393,10 +393,10 @@ document.querySelector('input#inputId').onkeyup = throttle(async function(e) {
   });
 ```
 
-To avoid call the server each time for the search only key, you can use a simple cache like this: 
+To avoid call the server each time for the search only key, you can use a simple cache like this:
 
 ```js
-/// To cache the keys  
+/// To cache the keys
 // import Cache from './cache'
 // Cache.set('key', value)
 // const value = await Cache.get('key')
