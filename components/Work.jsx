@@ -11,8 +11,8 @@ const RightNav = (props) => {
 
 const Work = ({images, text, title, tags=[], date, link="#"}) => {
     const [state, setState] = useState('IDLE')
-	return(
-		<div className="card border bg-light h-100">
+    return(
+        <div className="card border bg-light h-100">
             <div className="card-header">
                 <ImageGallery showNav={true} showBullets={true} infinite={true} showPlayButton={false}
                 slideDuration={10} items={images}
@@ -53,7 +53,7 @@ const Work = ({images, text, title, tags=[], date, link="#"}) => {
                 </div>
             </div>
         </div>
-	);
+    );
 }
 
 export default Work;

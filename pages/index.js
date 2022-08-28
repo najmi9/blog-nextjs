@@ -5,6 +5,7 @@ import Skills from '../me/skills';
 import Contact from '../me/contact';
 import Protofolio from '../me/protofolio';
 import Hero from '../me/hero';
+import Experience from '../me/experience';
 
 export default function Home({data}) {
   return (
@@ -18,8 +19,9 @@ export default function Home({data}) {
       <Hero />
       <main id="main">
         <About />
+        <Experience />
         <Skills />
-        <Protofolio /> 
+        <Protofolio />
         <Contact />
         <Blog data={data}/>
       </main>
@@ -28,7 +30,7 @@ export default function Home({data}) {
 }
 
 export async function getStaticProps() {
-  const fs = require("fs");
+  const fs = require('fs');
   const blogs = fs.readdirSync(`${process.cwd()}/blog/posts`, 'utf-8').filter(fn => fn.endsWith(".md"));
 
   const data = blogs.map(blog => fs.readFileSync(`${process.cwd()}/blog/posts/${blog}`, {encoding: "utf-8"}));
