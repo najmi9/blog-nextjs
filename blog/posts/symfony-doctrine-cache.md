@@ -1,7 +1,7 @@
 ---
 title: "Doctrine ORM: Second Level Cache."
 image: "/imgs/blog/doctrine-cache/doctrine_cache.png"
-slug: the_doctrine_cache
+slug: symfony-doctrine-cache
 ---
 
 <h2 class="article-title">
