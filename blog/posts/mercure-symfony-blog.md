@@ -1,7 +1,7 @@
 ---
 title: How to use Mercure Protocol with Symfony and API Platform ?
 image: "/imgs/blog/mercure.jpeg"
-slug: mercure_symfony
+slug: mercure-symfony-blog
 ---
 
 

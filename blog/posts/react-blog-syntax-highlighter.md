@@ -1,7 +1,7 @@
 ---
 title: "How to Create a Technical Blog by using React, Markdown and Syntax Highlighter Code ?"
 image: "/imgs/blog/syntaxic.png"
-slug: react_blog
+slug: react-blog-syntax-highlighter
 ---
 
 <h2 class="article-title">
@@ -9,7 +9,7 @@ slug: react_blog
 </div>
 
 ### 0. Introduction :
-For developers, have a technical blog is one of most imporatnt thing to have a presence in the internet, but the majority did not know what the efficient way to create one.
+For developers, have a technical blog is one of most important thing to have a presence in the internet, but the majority did not know what the efficient way to create one.
 One of the solution is to use **markdown**, but what's markdown ?
 
 Markdown is a way to style text on the web. You control the display of the document; formatting words as bold or italic, adding images, and creating lists are just a few of the things we can do with Markdow.

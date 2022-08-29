@@ -1,7 +1,7 @@
 ---
 title: "How to use Symfony and React in the same project ?"
 image: "/imgs/blog/s5-react.png"
-slug: react_symfony
+slug: react-symfony-integration
 ---
 
 <h2 class="article-title">

@@ -14,6 +14,9 @@ function Blog(props) {
             <title>{data.title}</title>
             <Description content={data.title} />
             <Keywords content={data.slug} />
+            <meta property="og:title" content={data.title} />
+            <meta property="og:description"   content={data.description} />
+            <meta property="og:image"         content={'https://www.najmidev.tech' + data.image} />
         </Head>
         <div id="blog-post-container">
             <div className="container">
