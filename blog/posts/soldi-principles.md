@@ -2,6 +2,7 @@
 title: "Solid design and principles in programming"
 image: "/imgs/blog/syntaxic.png"
 slug: react_blog
+description: Solid principles in software design
 ---
 
 You can say that is a good design if you can do changes easily, the cost of change shouldn't be expensive

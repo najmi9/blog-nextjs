@@ -5,13 +5,15 @@ import CodeBlock from "./CodeBlock.jsx";
 // import {Math, InlineMath} from './Math'
 // import remarkMath from 'remark-math'
 // import rehypeKatex from 'rehype-katex'
+import rehypeRaw from 'rehype-raw'
+
 
 const MarkDown = ({ content }) => {
     return (
         <ReactMarkdown
             children={content}
-            // remarkPlugins={[remarkMath]}
-            // rehypePlugins={[rehypeKatex]}
+            remarkPlugins={[/*remarkMath*/]}
+            rehypePlugins={[rehypeRaw, /*rehypeKatex*/]}
             skipHtml={true}
 
             components={{

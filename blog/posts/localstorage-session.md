@@ -2,12 +2,11 @@
 title: Why use PHP session to store the user cart instead of the localStorage
 image: '/imgs/blog/session.jpg'
 slug: localstorage-session
+description: Why use PHP session to store the user cart instead of the localStorage
 ---
 
 
-<h2 class="article-title">Why use PHP session to store the user cart instead of the localStorage</h2>
-
-## Cookies: 
+## Cookies:
 
 **Cookies are text files stored on the client computer and they are kept of use tracking purpose. PHP transparently supports HTTP cookies.**
 
@@ -21,8 +20,8 @@ There are three steps involved in identifying returning users:
 
 ```php
 /// PHP provide setcookie() function to set a cookie
-setcookie("name", "John Watkin", time()+3600, "/","", 0); 
-setcookie("age", "36", time()+3600, "/", "", 0); 
+setcookie("name", "John Watkin", time()+3600, "/","", 0);
+setcookie("age", "36", time()+3600, "/", "", 0);
 
 // PHP provides many ways to access cookies. Simplest way is to use either $_COOKIE or $HTTP_COOKIE_VARS variables.
 echo $_COOKIE["name"]; // "John Watkin"

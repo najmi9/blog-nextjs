@@ -2,17 +2,15 @@
 image: "/imgs/blog/fc-scraping.jpeg"
 title: "Automate publishing posts on Facebook with Selenium and Python."
 slug: facebook-automate-post
+description: Publish posts on facebook accounts programmatically with python
 ---
 
-<h2 class="article-title">
-Create posts automatically on Facebook with Selenium and Python
-</h2>
 
 ## What's we going to do ?
-After we enter the username and password of our Facebook account, the srcipt will be logged in and save the browser's cookies in a file using **pickle** to use it in the next time to avoid a login again, after authentification, we will get the text and the image from a **csv file** that contains the content and the path to the image of all future publications, to be published  after fill in the publication form.
+After we enter the username and password of our Facebook account, the srcipt will be logged in and save the browser's cookies in a file using **pickle** to use it in the next time to avoid a login again, after authentication, we will get the text and the image from a **csv file** that contains the content and the path to the image of all future publications, to be published  after fill in the publication form.
 All this work will be scheduled to be done every day at specific time.
 
-The `csv file` will contains for example 50 lines, each line contains the content and the path to the image of one post that will be published. every day we will take a line from the csv file and publish it, and that will be in 50 days.
+The <b class="text-danger">csv file</b> will contains for example 50 lines, each line contains the content and the path to the image of one post that will be published. every day we will take a line from the csv file and publish it, and that will be in 50 days.
 
 ## Prerequists
  - Python to be istalled
@@ -22,16 +20,16 @@ The `csv file` will contains for example 50 lines, each line contains the conten
  - pickle to dump the cookies in file and load them when we need
 ## Details
 
-Every time the `job function` called,  it  loads the cookies  from the `cookies.pkl` file using *pickle* module and add them to the driver, after that it requests the home page, and if the page title containg login word that means we need to log in and cookies are no more valid, so we are redirected to login page.
+Every time the **job function** called,  it  loads the cookies  from the **cookies.pkl** file using *pickle* module and add them to the driver, after that it requests the home page, and if the page title containing login word that means we need to log in and cookies are no more valid, so we are redirected to login page.
 
-The `data.csv` file contains the text and image to be published in a post, it will be like that :
+The <strong class="bg-primary text-white">data.csv</strong> file contains the text and image to be published in a post, it will be like that :
 ```csv
 text,image
 Hello Wold, path/to/image/post1.png
 Hi friends, path/to/image/post1.png
 ```
 Each  line will publish in a day and you can add lines as much as you want.
-To obtain a row that corresponds to a day we declare a variabe `i` globally to be accessible in job function and we will increment it each time a post is published, to obtain the next line to publish the next post.
+To obtain a row that corresponds to a day we declare a variabe <b class="text-danger">i</b> globally to be accessible in job function and we will increment it each time a post is published, to obtain the next line to publish the next post.
 
 
 ```python
