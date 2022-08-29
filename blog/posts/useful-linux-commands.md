@@ -1,12 +1,13 @@
 ---
-title: Usefull Linux Commands
+title: Useful Linux Commands
 image: "/imgs/blog/logo-linux.jpg"
-slug: linux-commands
+slug: useful-linux-commands
+description: Some linux commands that I use on daily basis
 ---
 
-<h2 class="article-title">Usefull Linux Commands.</h2>
+___
 
-# 1. List directory contents.
+#### 1. List directory contents.
 
 ```bash
 ls -lah
@@ -15,7 +16,7 @@ ls -lah
 * a :  do not ignore entries starting with .
 * h : print human readable sizes
 ___
-# 2. Remove files or directories
+#### 2. Remove files or directories
 
 ```bash
 rm file # remove a file
@@ -23,22 +24,22 @@ rm -rf directory
 ```
 * f : ignore nonexistent files and arguments, never prompt
 * r :  remove directories and their contents recursively
-# 3. Print real and effective user and group IDs
+#### 3. Print real and effective user and group IDs
 
 ```bash
 id -u # 1000 print only the effective user ID
 id -g # 100 print only the effective group ID
 ```
-# 4. The non-interactive network downloader.
+#### 4. The non-interactive network downloader.
 
 ```bash
 wget url
 wget -t=10 http://fly.srk.fer.hr/ -P downloads
 ```
 * P : folder when wget download the content pf the URL
-* t :  number of tries 
+* t :  number of tries
 
-# 5. Archiving utility
+#### 5. Archiving utility
 A Linux tarball (“tar.gz” or “tar.bz2” file ) is nothing but a system file format that combines and compresses multiple files.
 
 ```bash
@@ -63,19 +64,19 @@ tar -cjvf file.tar.bz2 /path/to/dir
 ```
 * j : Filter the archive through bzip2
 
-# 7. Move and Rename files
+#### 7. Move and Rename files
 
 ```bash
 mv file1 file2 #rename file1 file2
 mv file dir # move file to dir
 ```
 
-# 8. Search for files in a directory hierarchy
+#### 8. Search for files in a directory hierarchy
 
 ```bash
 find . -type d -name "dir_name"
 ```
-Find in the current dirctory all dirctories with name `dir_name`
+Find in the current dirctory all dirctories with name <b class="text-danger">dir_name</b>
 
 ```bash
 find Demo -type f -iname "*.py"
@@ -85,7 +86,7 @@ Find all files in Demo diectory with extension py.
 
 ```bash
 find . -type f -mmin 10
-``` 
+```
 Find all files which modified last 10 min ago.
 
 ```bash
@@ -106,12 +107,12 @@ Find all files with permission is 777
 ```bash
 find . -type f -name "*.jpg" -maxdepth 1
 ```
-Find all images of type `jpg` in the current dirctory and not in subdirctories
+Find all images of type **jpg** in the current dirctory and not in subdirctories
 
 ```bash
 find . -type f -name "*.pyc" -maxdepth 1 -exec rm {} \;
 ```
-Find all files with extension `pyc` and delete them.
+Find all files with extension <b class="text-warning">pyc</b> and delete them.
 
 ```bash
 find . -type d -empty
@@ -122,14 +123,14 @@ Find all empty folders in current dirctory.
 find build -name "*.js" ! -path "./build/external/*"
 find build -name "*.js" -not \( -path "./build/external/*" -prune \)
 ```
-Find all js files in build dirctory excluding the `build/external` dirctory.
+Find all js files in build directory excluding the **build/external** directory.
 
 ```bash
 find . -name "*.js" ! -path "./test1/*" ! -path "./test2/*"
 ```
-Find js files in the current diectory except the test1 and test2 folders.
+Find js files in the current directory except the test1 and test2 folders.
 
-# 9. SystemD commands
+#### 9. SystemD commands
 
 ```bash
 sudo systemctl list-units|egrep .service # list all services
@@ -141,7 +142,7 @@ sudo systemctl enable ssh # start a service every time the server turn on.
 sudo systemctl reload ssh #Asks all units listed on the command line to reload their configuration.
 sudo systemctl status ssh # status of a service
 ```
-# 10. Query the systemd journal: `journalctl`
+#### 10. Query the systemd journal: **journalctl**
 
 ```bash
 journalctl -a
@@ -154,7 +155,7 @@ journalctl -n
 
 * n : Show the most recent journal events and limit the number of events shown.
 
-# 11. Output the last part of files : `tail`
+#### 11. Output the last part of files : **tail**
 
 ```bash
 tail -f -n=30 file.log
@@ -162,9 +163,9 @@ tail -f -n=30 file.log
 * f : output appended data as the file grows;
 * n : output the last 30 lines,
 
-# 12. Network Statisitics
+#### 12. Network Statistics
 
-Netstat is an indispensable tool that shows you all of the network connections on an endpoint. 
+Netstat is an indispensable tool that shows you all of the network connections on an endpoint.
 
 ```bash
 sudo netstat -anptu # without sudo the program name does not appear.

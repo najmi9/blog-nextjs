@@ -2,15 +2,14 @@
 title: "Django Rest Framework ApiView and React JS"
 image: "/imgs/blog/django-react.jpeg"
 slug: create-django-api
+description:  Django Rest Framework ApiView and React JS
 ---
 
-<h2 class="article-title"> Django Rest Framework ApiView and React JS</h2>
-
 ### Introduction
-In this artcile we will create a simple rest api and use it in React JS, in the backend we use [Django](https://www.djangoproject.com/) that is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. Built by experienced developers, it takes care of much of the hassle of Web development, so you can focus on writing your app without needing to reinvent the wheel. [Django REST framework](https://www.django-rest-framework.org) is a powerful and flexible toolkit for building Web APIs.
+In this article we will create a simple rest api and use it in React JS, in the backend we use [Django](https://www.djangoproject.com/) that is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. Built by experienced developers, it takes care of much of the hassle of Web development, so you can focus on writing your app without needing to reinvent the wheel. [Django REST framework](https://www.django-rest-framework.org) is a powerful and flexible toolkit for building Web APIs.
 
 ### Get Started
-First of all create a virtual enviroment called venv, you can named what you want.
+First of all create a virtual environment called venv, you can named what you want.
 
 ```bash
 python3 -m venv venv
@@ -24,19 +23,19 @@ venv\Scripts\activate.bat
 deactivate
 ```
 
-Install django framework in your virtual enviroment
+Install django framework in your virtual environment
 
 ```bash
 pip install django
 ```
 
-Create our project with the name `api_django`
+Create our project with the name **api_django**
 
 ```bash
 django-admin startproject api_django
 ```
 
-Change dirctory to our project
+Change directory to our project
 
 ```bash
 cd api_django
@@ -46,17 +45,17 @@ Create an new application called api for example, and install RestFramework
 
 ```bash
 python manage.py startapp api
-pip install djangorestframework
+pip install django rest framework
 ```
 
-Add the two appalications to `INSTALLED_APPS` variable in `setting.py` file.
+Add the two applications to **INSTALLED_APPS** variable in **setting.py** file.
 ### Configuration
 ```python
 #api_django.settings.py-------------------------
 INSTALLED_APPS = [
-	#....
-	'rest_framework',
-	'api',  # activate the new app
+  #....
+  'rest_framework',
+  'api',  # activate the new app
 ]
 ```
 
@@ -65,7 +64,7 @@ In this project we will use a simple SQLITE database, that come by default in D
 ```python
 #api_django.settings.py-------------------------
 DATABASES = {
-    'default': {jango
+    'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
@@ -76,21 +75,21 @@ Now we will create a model for application.
 
 ```python
 class Product(models.Model):
-	title = models.CharField(max_length=255, blank=False, null=False)
-	price = models.FloatField()
-	image = models.URLField()
-	createdAt = models.DateTimeField(auto_now_add=True)
-	updtedAt = models.DateTimeField(auto_now=True)
+  title = models.CharField(max_length=255, blank=False, null=False)
+  price = models.FloatField()
+  image = models.URLField()
+  createdAt = models.DateTimeField(auto_now_add=True)
+  updatedAt = models.DateTimeField(auto_now=True)
 
-	def __str__(self):
-		return self.title
+  def __str__(self):
+    return self.title
 
 ```
 
 we are going now to create the database and the table Product :
 
 ```bash
-python manage.py makemigrations
+python manage.py make migrations
 python manage.py migrate
 ```
 
@@ -103,9 +102,9 @@ from .models import Product
 
 class ProductSerializer(serializers.ModelSerializer):
 
-	class Meta:
-		model = Product
-		fields = ['id', 'title', 'price', 'image']
+  class Meta:
+    model = Product
+    fields = ['id', 'title', 'price', 'image']
 
 ```
 
@@ -123,7 +122,7 @@ class ProductViewSet(viewsets.ModelViewSet):
 
 ```
 
-Finaly we configure our url to intercat with APIs, first we will inclure the urls from `api` app with prefix `api/`.
+Finally we configure our url to interact with APIs, first we will include the urls from **api** app with prefix **api/**.
 
 ```python
 # api_django.urls.py
@@ -148,11 +147,11 @@ router = routers.DefaultRouter()
 router.register('products', ProductViewSet, 'products')
 
 urlpatterns = [
-	path('', include(router.urls)),
+  path('', include(router.urls)),
 ]
 
 ```
-We can also manage this model product in administration by register it in `admin.py` file
+We can also manage this model product in administration by register it in <b class="text-danger">admin.py</b> file
 
 ```python
 #api.admin.py
@@ -161,7 +160,7 @@ from .models import Product
 # Register your models here.
 admin.site.register(Product)
 ```
-Now we can run the server, and interact with our API on port 80.
+Now we can run the server, and interact with our API on port <b class="text-success">80</b>.
 
 ```bash
 python manage.py runserver
@@ -178,7 +177,7 @@ npx create-react-app frontend
 
 ```
 
-Now edit your `app.js` file to be simllar to that :
+Now edit your <b class="text-warning">app.js</b> file to be similar to that :
 
 ```jsx
 import React, { useState, useEffect } from "react";
@@ -223,18 +222,18 @@ const App = () => {
 export default App;
 ```
 
-Two important things to do in `settings.py` file are :
+Two important things to do in <b class="badge bg-primary">settings.py</b> file are :
 
 ```python
 ##--------fix the template to be your react app--
 import os
 
 TEMPLATES = [
-	{
-		#.....
-		'DIRS': [os.path.join(BASE_DIR, 'frontend/build')],
-		#.....
-	}
+  {
+    #.....
+    'DIRS': [os.path.join(BASE_DIR, 'frontend/build')],
+    #.....
+  }
 ]
 
 # add static files
@@ -243,7 +242,7 @@ STATICFILES_DIRS=[os.path.join(BASE_DIR, 'frontend/build/static')]
 
 ```
 
-After add in `api_django.urls.py` file the home page url that point to main react file `index.html`
+After add in **api_django.urls.py** file the home page url that point to main react file **index.html**
 
 ```python
 #api_django.urls.py
@@ -257,7 +256,7 @@ urlpatterns = [
 
 ```
 
-Finaly run this command to compile your files in `build` dirctory after you change the current dirctory to `frontend` folder :
+Finaly run this command to compile your files in **build** dirctory after you change the current directory to **frontend** folder :
 
 ```bash
 yarn build
@@ -268,4 +267,3 @@ Go to Home page and enjoy with your new app.
 ---
 
 Author : Najmi Imad
-Github : [Github Repo](http://github.com/najmi9/api_django_blog)

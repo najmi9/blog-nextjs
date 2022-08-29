@@ -3,13 +3,11 @@
 title: What is SSH, How it's work, How we can use it and How to secure a open SSH connection?
 image: '/imgs/blog/ssh.png'
 slug: setup-secure-ssh-connection
+description: Ssh Connection for Linux servers
 ---
 
-<h2 class="article-title">
-What is SSH, How it's work, How we can use it and How to secure a open SSH connection?
-</h2>
 
-## 0. Inroduction :
+## 0. Introduction :
 
 Accessing to machines remotely became a necessity a   long time ago and we can barely imagine how it would be if couldn't control computers from remote locations.
 
@@ -26,17 +24,17 @@ In this post we will talk about SSH Protocol.
 
 ## 1. How does SSH Work?
 
-To open a connection you need a client who makes the requests and a server who listen to a requests maded by the client.
+To open a connection you need a client who makes the requests and a server who listen to a requests made by the client.
 
 1. **SSH client** : is an application you install on the computer which you will use to connect to another computer or server.
-2. **SSH server** the corresponding server-side component which there is a componenet called an SSH daemon that is constantly listeninig to a specific TCP/IP port for possible client connection requests.
+2. **SSH server** the corresponding server-side component which there is a component called an SSH daemon that is constantly listening to a specific TCP/IP port for possible client connection requests.
 
 
 You need the IP address or the name of the remote machine you want to connect to.
 
 ### 3. Installation of  SSH
 An open source SSH tool—widely used for Linux distributions— is OpenSSH.
-On the client side you need the openssh-client to open aconnection :
+On the client side you need the openssh-client to open a connection :
 ```bash
 sudo apt-get install openssh-client
 ```
@@ -58,7 +56,7 @@ ip addr show
 
 ### 4. How to Open SSH Connection?
 
-When openssh client and server are both installed, and you have the user, paddword and the IP adress of the remote machine, use command this command to  open ssh connnection :
+When openssh client and server are both installed, and you have the user, paddword and the IP address of the remote machine, use command this command to  open ssh connection :
 
 ```bash
 ssh user@host -p port
@@ -113,7 +111,7 @@ sudo vim /etc/ssh/sshd_config
   sudo service ssh restart
   ```
 - ***Disable Password Authentication :*** to forcing the use of the keys :
-     ```bash
+    ```bash
      PasswordAuthentication no # in the configuration file '/etc/ssh/sshd_config'
-     ```
+    ```
 

@@ -2,23 +2,20 @@
 title: "How to Create a Technical Blog by using React, Markdown and Syntax Highlighter Code ?"
 image: "/imgs/blog/syntaxic.png"
 slug: react-blog-syntax-highlighter
+description: How to Create a Technical Blog by using React, Markdown and Syntax Highlighter Code ?
 ---
-
-<h2 class="article-title">
- How to Create a Technical Blog by using React, Markdown and Syntax Highlighter Code ?
-</div>
 
 ### 0. Introduction :
 For developers, have a technical blog is one of most important thing to have a presence in the internet, but the majority did not know what the efficient way to create one.
 One of the solution is to use **markdown**, but what's markdown ?
 
-Markdown is a way to style text on the web. You control the display of the document; formatting words as bold or italic, adding images, and creating lists are just a few of the things we can do with Markdow.
+Markdown is a way to style text on the web. You control the display of the document; formatting words as bold or italic, adding images, and creating lists are just a few of the things we can do with Markdown.
 
-In this article we will talk about how to render markdown in react using [react-markdown](https://github.com/rexxars/react-markdown) library, and how to have a code syntax highlighting  for all programming languges with the [react-syntax-highlighter](https://github.com/najmi9/react-blog-syntaxhilighter) library.
+In this article we will talk about how to render markdown in react using [react-markdown](https://github.com/rexxars/react-markdown) library, and how to have a code syntax highlighting  for all programming languages with the [react-syntax-highlighter](https://github.com/najmi9/react-blog-syntaxhilighter) library.
 
 
 ### 1. Demo
-Finaly, we will have a simple home page contains two links to two posts. each post has some code content in PHP, Python and JSX languages.
+Finally, we will have a simple home page contains two links to two posts. each post has some code content in PHP, Python and JSX languages.
 You can check the source code on [github](https://github.com/najmi9/react-blog-syntaxhilighter) directly.
 
 ![React Syntax Highlighter](/imgs/blog/demo.png)
@@ -34,7 +31,7 @@ cd my-blog
 
 ![Symfony Folder Structure](/imgs/blog/dirs.png)
 
-First, let's create a new folder `pages` contains all pages, then create a home page file called `home.jsx` contains the code below :
+First, let's create a new folder **pages** contains all pages, then create a home page file called **home.jsx** contains the code below :
 
 ```jsx
 //src/pages/home.js
@@ -56,13 +53,13 @@ const Home = () => {
 
 export default Home;
 ```
-We need `react-router-dom` library to manage our routes, so think to install it :
+We need **react-router-dom** library to manage our routes, so think to install it :
 
 ```bash
 yarn add react-router-dom
 ```
 
-Now in `app.js` file we will create our routes, so edit your file to look like this:
+Now in **app.js** file we will create our routes, so edit your file to look like this:
 ```jsx
 //src/app.js
 
@@ -129,9 +126,9 @@ const Post2 = () => {
 export default Post2;
 ```
 
-In a folder called `posts` in `src` dirctory we are going to create two files `post1.md` and `post2.md`, each file contain a markdown content of a each post, so you can write what you want as a content.
+In a folder called **`posts** in **src** dirctory we are going to create two files **post1.md** and **post2.md**, each file contain a markdown content of a each post, so you can write what you want as a content.
 
-in `src/posts/post1.md` copy and paste this code :
+in **src/posts/post1.md** copy and paste this code :
 
 ```
 # This is the title of the post 1
@@ -152,7 +149,7 @@ def index():
 	[ print(i) for i in range(10) ]
 ```
 
-The last Step is to create a component that take the markdown to parse it to html, so create a folder `components` folder in `src` dirctory and also those two files :
+The last Step is to create a component that take the markdown to parse it to html, so create a folder **components`**folder in **src** directory and also those two files :
 
 ```jsx
 //src/components/markdown_parser.jsx
@@ -190,13 +187,13 @@ const MarkDownParser = ({content}) => {
 };
 export default MarkDownParser;
 ```
-Here you need to install the `react-markdown` library:
+Here you need to install the **react-markdown** library:
 ```bash
 yarn add react-markdown
 ```
 
-Finally, in order to have a hilight syntax, the code must wrapped by a `SyntaxHighlighter` component that render it in elegant and styled way,
-on every pre tag, this component will take the language and  the content to display it with syntax highlighting, so we need to create `CodeBlock`  responsible for dealing with our `<pre />` HTML tags.
+Finally, in order to have a hilight syntax, the code must wrapped by a **SyntaxHighlighter** component that render it in elegant and styled way,
+on every pre tag, this component will take the language and  the content to display it with syntax highlighting, so we need to create **CodeBlock** responsible for dealing with our **<pre />** HTML tags.
 ```jsx
 //src/components/CodeBlock.jsx
 

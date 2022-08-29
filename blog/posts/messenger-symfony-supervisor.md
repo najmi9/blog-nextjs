@@ -2,11 +2,8 @@
 title: 'Symfony Messenger: Supervisor Configuration In Production Enviroment'
 image: "/imgs/blog/messenger-symfony/cover.jpeg"
 slug: messenger-symfony-supervisor
+description: How to use the supervisor to run the messenger worker inside symfony application
 ---
-
-<h2 class="article-title">
-Symfony Messenger: Supervisor Configuration In Production Enviroment
-</h2>
 
 # Table of Content:
 1. [Introduction](#introduction)
@@ -26,11 +23,11 @@ Symfony Messenger: Supervisor Configuration In Production Enviroment
 
 ### Inroduction
 
-Messenger provides a message bus with the ability to send messages through transports (e.g. queues) to be handled later, and by using a **worker** that looking for new messages on your transport and handling them. so we need some util that are always running and handling the messages and If it quits for some reason, start a new one, and this util called `Supervisor`.
+Messenger provides a message bus with the ability to send messages through transports (e.g. queues) to be handled later, and by using a **worker** that looking for new messages on your transport and handling them. so we need some util that are always running and handling the messages and If it quits for some reason, start a new one, and this util called <b class="text-danger">Supervisor</b>.
 
 [Supervisor](http://supervisord.org/): A Process Control System is a client/server system that allows its users to monitor and control a number of processes on UNIX-like operating systems.
 
-In this article we will going to show you how to create and handle some logic asychronounsly and handle the configuration of the supervisor in the production mode, because you don't need a supervisor in development, you can run the worker (`php bin/console messenger:consume`) manually.
+In this article we will going to show you how to create and handle some logic asychronounsly and handle the configuration of the supervisor in the production mode, because you don't need a supervisor in development, you can run the worker (**php bin/console messenger:consume**) manually.
 
 ### Development
 
@@ -150,11 +147,11 @@ On production, there are a few important things to think about:
 
 * Use Supervisor to keep your worker(s) running
 
-* Don’t Let Workers Run Forever:  use a flag like `messenger:consume --limit=10` to tell your worker to only handle 10 messages before exiting (then Supervisor will create a new process). There are also other options like `--memory-limit=128M` and `--time-limit=3600`.
+* Don’t Let Workers Run Forever:  use a flag like **messenger:consume --limit=10** to tell your worker to only handle 10 messages before exiting (then Supervisor will create a new process). There are also other options like **--memory-limit=128M** and **--time-limit=3600**.
 
-* Restart Workers on Deploy: To do this, run `messenger:stop-workers` on deploy. This will signal to each worker that it should finish the message it’s currently handling and shut down gracefully.
+* Restart Workers on Deploy: To do this, run **messenger:stop-workers** on deploy. This will signal to each worker that it should finish the message it’s currently handling and shut down gracefully.
 
-On production, we somehow need to make sure that this command is always running and  If it quits for some reason, start a new one. And actually, it's not just that we need a way to make sure that someone starts this command and then it runs forever. We actually don't want the command to run forever. No matter how well you write your PHP code, PHP just isn't meant to be ran forever - eventually your memory footprint will increase too much and the process will die. We don't want our process to run forever.  what we really want is for `messenger:consume` to run, handle... a few messages... then close itself. Then, we'll use a different tool to make sure that each time the process disappears.
+On production, we somehow need to make sure that this command is always running and  If it quits for some reason, start a new one. And actually, it's not just that we need a way to make sure that someone starts this command and then it runs forever. We actually don't want the command to run forever. No matter how well you write your PHP code, PHP just isn't meant to be ran forever - eventually your memory footprint will increase too much and the process will die. We don't want our process to run forever.  what we really want is for **messenger:consume** to run, handle... a few messages... then close itself. Then, we'll use a different tool to make sure that each time the process disappears.
 
 
 #### Installation Of The Supervisor
@@ -164,8 +161,8 @@ sudo apt-get install supervisor
 ```
 #### Configuration
 
-The Supervisor configuration files typically live in a `/etc/supervisor/conf.d` directory and the configuration file is conventionally named `supervisord.conf`.
-Thsi file should contains the following code, and keep it in your project under `config/messenger-worker.conf` file.
+The Supervisor configuration files typically live in a **/etc/supervisor/conf.d** directory and the configuration file is conventionally named **supervisord.conf**.
+Thsi file should contains the following code, and keep it in your project under **config/messenger-worker.conf** file.
 
 ```bash
 #/etc/supervisor/conf.d/supervisord.conf
@@ -181,7 +178,7 @@ startsecs=0 #The total number of seconds which the program needs to stay running
 ```
 
 Don't forget to change the user to the Unix user on your server.
-Environment variables that are present in the environment at the time that supervisord is started can be used in the configuration file using the Python string expression syntax `%(ENV_X)s`
+Environment variables that are present in the environment at the time that supervisord is started can be used in the configuration file using the Python string expression syntax <b class="badge bg-primary">%(ENV_X)s</b>
 
 The configuration file must contain one or more program sections in order for supervisord to know which programs it should start and control. The header value is composite value. It is the word *program*, followed directly by a colon, then the program name. A header value of [program:foo] describes a program with the name of *foo*. The name is used within client applications that control the processes that are created as a result of this configuration.
 

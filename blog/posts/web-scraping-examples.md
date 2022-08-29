@@ -2,11 +2,8 @@
 title: "Web Scraping and Automation with python: Parctical Examples."
 image:  "/imgs/blog/scraper.png"
 slug: web-scraping-examples
+description: Web Scraping and Automation with python
 ---
-
-<h2 class="article-title">
-Web Scraping With Python: Practical examples
-</h2>
 
 ### Introduction
 
@@ -40,27 +37,27 @@ As you know web page is a HTML, CSS, javascript files and some data like text an
 </body>
 </html>
 ```
-In this file, we have CSS selectors like `class` and `id` and we will use them to select a specific data.
+In this file, we have CSS selectors like **class** and **id** and we will use them to select a specific data.
 
 So basically the main goal is to extract this data from this web page using python.
 
-Some cases we have already data stored in `csv` file and  need to fill forms  and submit this data  to a web server automatically, in this case we will use a web driver to do that by usinig `Selenium` library in python.
+Some cases we have already data stored in **csv** file and  need to fill forms  and submit this data  to a web server automatically, in this case we will use a web driver to do that by usinig **Selenium** library in python.
 
-Some cases  we will need just to get the response from the server to extract data from, in this case we use the `request` package to download this page, also we will use the `BeautifulSoup` library to select a specific data from the web page.
+Some cases  we will need just to get the response from the server to extract data from, in this case we use the **request`**package to download this page, also we will use the **BeautifulSoup** library to select a specific data from the web page.
 
-To submit a form you can use `Selenium` libarary with a web driver like `chrome` or `firefox`. we will give an example in the last part of this article
+To submit a form you can use **Selenium** libarary with a web driver like **chrome** or **firefox**. we will give an example in the last part of this article
 .
 ### Practical example 1 : extract profile information from Instagram for a given username.
 
 
 ```python
-# used to download the page from istagram by get request
+# used to download the page from instagram by get request
 import requests
-# used to parse the server response to html to select specific atteributes and tages
+# used to parse the server response to html to select specific attributes and tags
 from bs4 import BeautifulSoup
-# used to deal with json in python and convert a json (string) to a dictionnary
+# used to deal with json in python and convert a json (string) to a dictionary
 import json
-# used to deal with scv files easelly
+# used to deal with scv files easily
 import csv
 
 username = input('Enter the username : \n')
@@ -85,23 +82,23 @@ if not response.ok:
 # parse the text response to html
 soup = BeautifulSoup(response.text, features='html.parser')
 
-# select the content of 4 fourthy script that contain data
+# select the content of fourths script that contain data
 string = soup.find_all('script')[4].string
 
 # remove useless data
 string = string.replace(';', '').replace('window._sharedData = ', '')
 
-#convert the string to a dictionnary
+#convert the string to a dictionary
 data = json.loads(string)
 
 #select the user info
 user = data['entry_data']['ProfilePage'][0]['graphql']['user']
 
-# extract the nombre of fllowers
-fllowers = user['edge_followed_by']['count']
+# extract the number of followers
+followers = user['edge_followed_by']['count']
 
-# extract the nombre of fllowing
-fllowing = user['edge_follow']['count']
+# extract the number of following
+following = user['edge_follow']['count']
 
 name = user['full_name']
 
@@ -114,9 +111,9 @@ posts = user['edge_owner_to_timeline_media']['edges']
 # open a csv file in append mode to add user data.
 with open('data.csv', 'a', newline='\n') as csvfile :
 	csv_file = csv.writer(csvfile)
-	csv_file.writerow(['username', 'name','image', 'fllowers', 'fllowing', 'posts'])
-	csv_file.writerow([username, name,image, fllowers, fllowing, len(posts)])
-	print('the process successed !')
+	csv_file.writerow(['username', 'name','image', 'followers', 'following', 'posts'])
+	csv_file.writerow([username, name,image, followers, following, len(posts)])
+	print('the process succeed !')
 
 ```
 
@@ -124,22 +121,22 @@ with open('data.csv', 'a', newline='\n') as csvfile :
 
 Selenium Python bindings provide a convenient API to access Selenium WebDrivers like Firefox, Ie, Chrome, Remote etc. The current supported Python versions are 3.5 and above. Selenium is mostly used for writing test cases.
 
-For more informationn you can check this amazing [documentation](https://selenium-python.readthedocs.io)
+For more information you can check this amazing [documentation](https://selenium-python.readthedocs.io)
 
 To install Selenium you can run this command :
 ```bash
 pip install selenium
 ```
 
-Selenium requires a driver to interface with the chosen browser. Firefox, for example, requires geckodriver, which needs to be installed before the below examples can be run. Make sure it’s in your PATH, e. g., place it in `/usr/bin` or
-`/usr/local/bin`.
+Selenium requires a driver to interface with the chosen browser. Firefox, for example, requires geckodriver, which needs to be installed before the below examples can be run. Make sure it’s in your PATH, e. g., place it in **/usr/bin** or
+**/usr/local/bin**.
 
 
 You can install firefox driver from [here](https://github.com/mozilla/geckodriver/releases)
 
 The selenium.webdriver module provides all the WebDriver implementations. Currently supported WebDriver implementations are Firefox, Chrome, IE and Remote.
 
-The fllowing example show how to submit a login form automatically.
+The following example show how to submit a login form automatically.
 
 ```python
 from selenium import webdriver
@@ -162,7 +159,7 @@ password.clear()
 # fill inputs by given data
 username.send_keys("****@gmail.com")
 password.send_keys("*******")
-# click to subbmit the form
+# click to submit the form
 btn.click()
 
 #close the driver
