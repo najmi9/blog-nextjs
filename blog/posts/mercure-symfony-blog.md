@@ -113,7 +113,7 @@ Content-Type: application/x-www-form-urlencoded
 Authorization: Bearer $JWT
 topic=https://example.com/foo&data=the%20content
 ```
-In Symfony the Mercure Component provides an **Update** value object representing the update to publish. It also provides a Publisher service to dispatch updates to the Hub.
+In Symfony the Mercure Component provides an <b class="text-warning">Update</b> value object representing the update to publish. It also provides a Publisher service to dispatch updates to the Hub.
 The Publisher service can be injected using the autowiring in any other
 service, including controllers.
 

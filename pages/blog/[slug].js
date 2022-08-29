@@ -15,13 +15,53 @@ function Blog(props) {
             <Description content={data.title} />
             <Keywords content={data.slug} />
             <meta property="og:title" content={data.title} />
-            <meta property="og:description"   content={data.description} />
-            <meta property="og:image"         content={'https://www.najmidev.tech' + data.image} />
+            <meta property="og:description" content={data.description} />
+            <meta property="og:image" content={'https://www.najmidev.tech' + data.image} />
+            <script
+                type='application/ld+json'
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(
+                        {
+                            "@context": "http://schema.org",
+                            "@type": "BlogPosting",
+                            "mainEntityOfPage": {
+                                "@type": "WebPage",
+                                "@id": `https://najmidev.tech/blog/${data.slug} `
+                            },
+                            "headline": data.title,
+                            "image": {
+                                "@type": "ImageObject",
+                                "url": `https://www.najmidev.tech/${data.image}`,
+                                "height": 463,
+                                "width": 700
+                            },
+                            "datePublished": "2022-08-29",
+                            "dateModified": "2022-08-30",
+                            "author": {
+                                "@type": "Person",
+                                "name": "Imad Najmi"
+                            },
+                            "publisher": {
+                                "@type": "Organization",
+                                "name": "NajmiDev",
+                                "logo": {
+                                    "@type": "ImageObject",
+                                    "url": "https://www.najmidev.tech/imgs/profile/logo.png",
+                                    "width": 550,
+                                    "height": 60
+                                }
+                            },
+                            "description": data.description || 'Symfony PHP Developer',
+                            "articleBody": data.description || 'Article body'
+                        }
+                    )
+                }}
+            >
+        </script>
         </Head>
         <div id="blog-post-container">
             <div className="container">
                 <h1 className="header">{data.title}</h1>
-                <h3>{data.description}</h3>
                 <MarkDown content={content}/>
             </div>
         </div>

@@ -2,11 +2,8 @@
 title: "Doctrine ORM: Second Level Cache."
 image: "/imgs/blog/doctrine-cache/doctrine_cache.png"
 slug: symfony-doctrine-cache
+description: Doctrine Cache
 ---
-
-<h2 class="article-title">
-Doctrine ORM: Integration Of Second Level Cache With Symfony.
-</h2>
 
 ### Introduction
 This article describes how to improve your Symfony 5 app’s performance by introducing Doctrine’s second level cache. The Second Level Cache is designed to reduce the amount of necessary database access. It sits between your application and the database to avoid the number of database hits as much as possible.
@@ -35,9 +32,9 @@ Notice that when caching collection and queries only identifiers are stored. The
 - **READ_WRITE** :  the slowest one, able to perform updates and locks and the only we can use when implementing a custom region
 
 In this article we will use just the second caching mode.
-If use the first mode and when you update the entity you get an error taht say you can not update the cache with the mode readonly.
+If use the first mode and when you update the entity you get an error that say you can not update the cache with the mode readonly.
 
-### Integraction with Symfony
+### Integration with Symfony
 
 #### Configuration
 You can use a Symfony Cache pool by using the pool type and creating a cache
@@ -124,7 +121,7 @@ public function findByExampleField($value)
     }
 ```
 
-So Now if you call any method from the `LikeRepository` the doctrine hit database to insert the row and put into cache.
+So Now if you call any method from the **LikeRepository** the doctrine hit database to insert the row and put into cache.
 
 ```php
 #src/Controller/HomeController.php

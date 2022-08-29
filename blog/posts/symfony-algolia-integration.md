@@ -2,6 +2,7 @@
 title: "Implementation Of algolia Search With Symfony 5"
 image: "/imgs/blog/algolia/algolia.jpeg"
 slug: symfony-algolia-integration
+description: use Algolia as a search engine in Symfony project
 ---
 
 ## Introduction
@@ -27,7 +28,7 @@ composer require algolia/search-bundle
 When I want to install the algolia search bundle I got an error of type your requirements could not be resolved, and the problem was the compatibility with the doctrine orm bundle **v2.7**, so I edited this version to **v2.5** and it works!!
 
 
-After the istallation symfony flex will create a configuration file for algolia called *algolia_search.yaml* and edit the *.env* file to set your keys, to get this keys  create an account on www.algolia.com and get your credentials from the API Keys tab.
+After the installation symfony flex will create a configuration file for algolia called *algolia_search.yaml* and edit the *.env* file to set your keys, to get this keys  create an account on www.algolia.com and get your credentials from the API Keys tab.
 
 ```yaml
 #.env

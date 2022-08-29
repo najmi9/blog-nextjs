@@ -11,7 +11,7 @@ const CodeBlock = ({className, children}) => {
             showInlineLineNumbers={false}
             wrapLines={false}
             style={vs2015}
-            PreTag='p'
+            PreTag='span'
             startingLineNumber={1}
             useInlineStyles={true}
             wrapLongLines={false}

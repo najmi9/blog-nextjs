@@ -2,11 +2,9 @@
 title: "How to use Symfony and React in the same project ?"
 image: "/imgs/blog/s5-react.png"
 slug: react-symfony-integration
+description: "Webpack encore: Using React inside symfony application"
 ---
 
-<h2 class="article-title">
-How to create mrdern website with Symfony Api-Platform and React JS?
-</h2>
 ![Symfony React Api Platform](/imgs/symfony-react.png)
 
 ### Prerequisites :
@@ -24,7 +22,7 @@ Webpack Encore is a simpler way to integrate Webpack into your application. It w
 cd my-app
 composer require encore
 ```
-This command will take care of creating a `webapck.config.js` file, add the `assets` folder and add `node_modules` dirctory to `.gitignore` file.
+This command will take care of creating a **webpack.config.js** file, add the **assets** folder and add **node_modules** directory to **.gitignore** file.
 
 #### 3.Install javascript dependencies
 ```bash
@@ -35,14 +33,14 @@ yarn install
 ```bash
 composer require api
 ```
-#### 5.Configure database in your `.env` file
+#### 5.Configure database in your **.env** file
 You can also use a sqlite database for developpment, but we will use phpMyAdmin to manage database.
 ```bash
 DATABASE_URL=mysql://user:password@127.0.0.1:3306/database_name?serverVersion=5.7
 ```
 #### 6.Create our first entity called Product for example
 
-To do this copy the paste the fllowing code in your file, or try to create the same thing by CLI if you know what you do.
+To do this copy the paste the following code in your file, or try to create the same thing by CLI if you know what you do.
 ```bash
 php bin/console make:entity Product
 ```
@@ -126,14 +124,13 @@ class Product
 
 }
 ```
-
-we add `@ApiResource` annotation to tell Api Platform bundle that we want to add a new resource to our api that we will use in our react frontend.
+we add **@ApiResource** annotation to tell Api Platform bundle that we want to add a new resource to our api that we will use in our react frontend.
 
 ![Product source](/imgs/blog/product_api.png)
 
 
 #### 7. Create our table in database.
-Make sure that you're in the working folder `my-app`.
+Make sure that you're in the working folder **my-app**.
 ```bash
 #create database
 php bin/console doctrine:database:create
@@ -158,7 +155,7 @@ first let us add some dependencies with yarn, you can use npm too and install Re
 yarn add @babel/preset-react --dev
 yarn add react react-dom
 ```
-`webpack.config.js` already holds the basic config you need, thanks to recieps, so to enable react we should uncomment `.enableReactPreset() ` in `webpack.config.js` file.
+**webpack.config.js** already holds the basic config you need, thanks to recipes, so to enable react we should uncomment **.enableReactPreset()** in webpack.config.js** file.
 ```php
 Encore
      ...
@@ -202,7 +199,7 @@ yarn encore dev --watch
 ```
 #### 11. Create frontend part with React
 
-In our root dirctory we have a folder called `assets` that contains all CSS an JS files, those folder are automatically created when we installed the webpack bundle.
+In our root directory we have a folder called **asset** that contains all CSS an JS files, those folder are automatically created when we installed the webpack bundle.
 
 ```jsx
 // assets/js/app.js
@@ -274,7 +271,7 @@ class DefaultController extends AbstractController
     }
 }
 ```
-The `reactRouting` parameter is used to allow React Router to control routing with the application and stop Symfony from intercepting the route
+The **reactRouting** parameter is used to allow React Router to control routing with the application and stop Symfony from intercepting the route
 
 #### 14. The last thong is to create a div#root in your index.html.twig file and you're done.
 
