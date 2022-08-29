@@ -1,16 +1,14 @@
 ---
-title: "Impelementaion Of algolia Search With symfony 5"
+title: "Implementation Of algolia Search With Symfony 5"
 image: "/imgs/blog/algolia/algolia.jpeg"
-slug: algolia
+slug: symfony-algolia-integration
 ---
-
-<h2 class="article-title"> Implementation Of Algolia Engine With Symfony 5. </h2>
 
 ## Introduction
 
 [Algolia](https://www.algolia.com) is a hosted search engine, offering full-text, numerical, and faceted search, capable of delivering real-time results from the first keystroke. Algolia’s powerful API lets you quickly and seamlessly implement search within your websites and mobile applications.
 
-The simplest way to integrate Algolia search is using the bundle **Algolia SearchBundle**. This bundle provides an easy way to integrate Algolia Search into your Symfony application (using Doctrine). It allows you to index your data, keep it in sync, and search through it.
+The simplest way to integrate Algolia search is using the bundle **Algolia SearchBundle**. This bundle provides an easy way to integrate Algolia Search into your [Symfony](https://symfony.com) application (using Doctrine). It allows you to index your data, keep it in sync, and search through it.
 
 The final result of this article is smillar to this image.
 
@@ -26,10 +24,10 @@ cd algolia-demo
 composer require algolia/search-bundle
 ```
 
-When I want to install the algolia search bundle I got an error of type your requirements could not be resolved, and the problem was the compatibility with the doctrine orm bundle `v2.7`, so I edited this version to `v2.5` and it works!!
+When I want to install the algolia search bundle I got an error of type your requirements could not be resolved, and the problem was the compatibility with the doctrine orm bundle **v2.7**, so I edited this version to **v2.5** and it works!!
 
 
-After the istallation symfony flex will create a configuration file for algolia called `algolia_search.yaml` and edit the `.env` file to set your keys, to get this keys  create an account on www.algolia.com and get your credentials from the API Keys tab.
+After the istallation symfony flex will create a configuration file for algolia called *algolia_search.yaml* and edit the *.env* file to set your keys, to get this keys  create an account on www.algolia.com and get your credentials from the API Keys tab.
 
 ```yaml
 #.env
@@ -38,14 +36,14 @@ ALGOLIA_API_KEY=...
 ```
 
 ### Configuration
-Configuration typically lives in the `config/packages/algolia_search.yaml` file for a Symfony 4+ application.
+Configuration typically lives in the *config/packages/algolia_search.yaml* file for a Symfony 4+ application.
 
 This is how you define what entity you want to index and some other technical details like a prefix or the number of results and serialization groups.
 Each entry under the indices key must contain the following attributes:
 - name: is the canonical name of the index in Algolia
 - class: is the full class reference of the entity to index
 
-The option *enable_serializer_groups* is very important because solve the famous problem of **Circular Refrence**, so it let's you to define what attribute you want to index using the annotation `@Groups({"searchable"})` , because before sending your data to Algolia, each entity is converted to an array using the Symfony built-in serializer.
+The option *enable_serializer_groups* is very important because solve the famous problem of **Circular Reference**, so it let's you to define what attribute you want to index using the annotation **@Groups({"searchable"})** , because before sending your data to Algolia, each entity is converted to an array using the Symfony built-in serializer.
 
 You can see more about the configuration in the [official docs](https://www.algolia.com/doc/api-client/symfony/configuration).
 
@@ -63,7 +61,7 @@ algolia_search:
           enable_serializer_groups: true
 ```
 
-I created 2 entities product and comment, with association manyToOne, so in this case if you don't use the annotation groups you will get an error of circular refrence.
+I created 2 entities product and comment, with association manyToOne, so in this case if you don't use the annotation groups you will get an error of circular reference.
 ```php
 namespace App\Entity;
 

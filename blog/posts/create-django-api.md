@@ -1,7 +1,7 @@
 ---
 title: "Django Rest Framework ApiView and React JS"
 image: "/imgs/blog/django-react.jpeg"
-slug: django_api
+slug: create-django-api
 ---
 
 <h2 class="article-title"> Django Rest Framework ApiView and React JS</h2>

@@ -1,7 +1,7 @@
 ---
-title: Install Symfony application on Ubuntu OS
+title: Setup PHP Symfony Elasticsearch Web Server On Linux Ubuntu
 image: '/imgs/blog/symfony_app.png'
-slug: symfony-app
+slug: setup-php-symfony-elasticsearch-web-server
 ---
 
 <h2 class="article-title">Install web server on Ubuntu OS.</h2>
@@ -70,7 +70,7 @@ WeasyPrint is a smart solution helping web developers to create PDF documents. I
 ```bash
 sudo apt-get update
 sudo apt-get install libxml2-dev libxslt-dev libpango1.0-dev python3-pip build-essential python3-dev python3-pip python3-setuptools python3-wheel python3-cffi libcairo2 libpango-1.0-0 libpangocairo-1.0-0 libgdk-pixbuf2.0-0 libffi-dev shared-mime-info
-sudo pip3 install WeasyPrint 
+sudo pip3 install WeasyPrint
 ```
 
 ### Install Elasticsearch
@@ -113,8 +113,8 @@ git pull origin dev
 # Update .env.local file
 echo "DATABASE_URL=mysql://user:user@localhost:3306/db_dev" > .env.local
 # Install Dependencies
-composer install 
-yarn 
+composer install
+yarn
 yarn build
 ```
 
@@ -140,6 +140,6 @@ or you can install inginx:
 sudo apt-get install nginx
 # stop apache if already installed
 sudo service apache stop
-# configure nginx 
+# configure nginx
 sudo service nginx restart
 ```

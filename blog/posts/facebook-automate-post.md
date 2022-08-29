@@ -1,7 +1,7 @@
 ---
 image: "/imgs/blog/fc-scraping.jpeg"
 title: "Automate publishing posts on Facebook with Selenium and Python."
-slug: fc_automate_post
+slug: facebook-automate-post
 ---
 
 <h2 class="article-title">
@@ -16,7 +16,7 @@ The `csv file` will contains for example 50 lines, each line contains the conten
 
 ## Prerequists
  - Python to be istalled
- - Seleium and Chrome or Firefox webdriver 
+ - Seleium and Chrome or Firefox webdriver
  - scv module to deal with csv files
  - schedule to schedule our script to do the job at specific time
  - pickle to dump the cookies in file and load them when we need
@@ -24,7 +24,7 @@ The `csv file` will contains for example 50 lines, each line contains the conten
 
 Every time the `job function` called,  it  loads the cookies  from the `cookies.pkl` file using *pickle* module and add them to the driver, after that it requests the home page, and if the page title containg login word that means we need to log in and cookies are no more valid, so we are redirected to login page.
 
-The `data.csv` file contains the text and image to be published in a post, it will be like that : 
+The `data.csv` file contains the text and image to be published in a post, it will be like that :
 ```csv
 text,image
 Hello Wold, path/to/image/post1.png
@@ -53,7 +53,7 @@ driver = webdriver.Chrome('../../chromedriver', options = options)
 
 i = 0
 
-def job():	
+def job():
 	global i
 	driver.get(url)
 	# add cookies to browser if they exists and not expired
@@ -94,7 +94,7 @@ def job():
 
 # schedule the job to done every day at 10:30
 schedule.every().day.at("10:30").do(job)
-  
+
 while True:
 	schedule.run_pending()
 	sleep(1)

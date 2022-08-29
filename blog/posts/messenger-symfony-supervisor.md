@@ -1,7 +1,7 @@
 ---
 title: 'Symfony Messenger: Supervisor Configuration In Production Enviroment'
 image: "/imgs/blog/messenger-symfony/cover.jpeg"
-slug: messenger_symfony
+slug: messenger-symfony-supervisor
 ---
 
 <h2 class="article-title">
@@ -30,7 +30,7 @@ Messenger provides a message bus with the ability to send messages through trans
 
 [Supervisor](http://supervisord.org/): A Process Control System is a client/server system that allows its users to monitor and control a number of processes on UNIX-like operating systems.
 
-In this article we will going to show you how to create and handle some logic asychronounsly and handle the configuration of the supervisor in the production mode, because you don't need a supervisor in development, you can run the worker (`php bin/console messenger:consume`) manually. 
+In this article we will going to show you how to create and handle some logic asychronounsly and handle the configuration of the supervisor in the production mode, because you don't need a supervisor in development, you can run the worker (`php bin/console messenger:consume`) manually.
 
 ### Development
 
@@ -135,7 +135,7 @@ MESSENGER_TRANSPORT_DSN=redis://localhost:6379/messages
 MESSENGER_TRANSPORT_DSN=redis://password@localhost:6379/messages/symfony/consumer?auto_setup=true&serializer=1&stream_max_entries=0&dbindex=0
 # Unix Socket Example
 MESSENGER_TRANSPORT_DSN=redis:///var/run/redis.sock
-``` 
+```
 Set delete_after_ack to true (if you use a single group) or define stream_max_entries (if you can estimate how many max entries is acceptable in your case) to avoid memory leaks. Otherwise, all messages will remain forever in Redis.
 
 #### Consuming Messages Running the Worker
@@ -177,7 +177,7 @@ numprocs=2 # create two worker processes.
 autostart=true #his program will start automatically when supervisord is started.
 autorestart=true #automatically restart a process if it exits when it's running
 process_name=%(program_name)s_%(process_num)02d # name the processes
-startsecs=0 #The total number of seconds which the program needs to stay running after a startup to consider the start successful. 
+startsecs=0 #The total number of seconds which the program needs to stay running after a startup to consider the start successful.
 ```
 
 Don't forget to change the user to the Unix user on your server.
