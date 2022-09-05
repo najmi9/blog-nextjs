@@ -10,8 +10,6 @@ The idea of this article is very simple, by using mercure and symfony, and when 
 
 ![Mercure Notitfication Demo](/imgs/blog/mercure_demo.png)
 
-<img src="/imgs/blog/mercure_demo.png" />
-
 ## Mercure Protocol :
 [Mercure Protocol](https://mercure.rocks/docs/mercure) is a protocol allowing to push data updates to web browsers and other HTTP clients in a convenient, fast, reliable and battery-efficient way. It is especially useful to publish async and real-time updates of resources served through web APIs, to reactive web and mobile apps.
 
