@@ -46,21 +46,21 @@ So make sure that you are installing Doctrine and Cache bundles:
 ```bash
  composer require symfony/cache doctrine/doctrine-bundle doctrine/orm
 ```
-In your `doctrine.yaml` file add this code to enable the second level cache and
+In your <b class="text-danger">doctrine.yaml</b> file add this code to enable the second level cache and
 
 ```bash
 #config/packages/doctrine.yaml
 
 doctrine:
-	orm:
-		second_level_cache:
+    orm:
+        second_level_cache:
             enabled: true
             region_cache_driver:
                 type: pool
                 pool: doctrine.second_level_cache_pool
 ```
 
-In the `cache.yaml` file add tis code, we use Redis as adapter and you can use what you want :
+In the <b class="text-primary">cache.yaml</b> file add tis code, we use Redis as adapter and you can use what you want :
 
 ```bash
 #config/packages/cache.yaml
@@ -94,9 +94,9 @@ use Doctrine\ORM\Mapping\Cache;
  */
 class Like
 {
-	# ...
+    # ...
 
-	 /**
+     /**
      * @Cache('NONSTRICT_READ_WRITE')
      * @ManyToOne(targetEntity="User")
      * @JoinColumn(name="user_id", referencedColumnName="id")
@@ -156,23 +156,22 @@ use Doctrine\ORM\EntityManegerInterface;
 
 class HomeController
 {
-	# ...
-	/**
-	 * @Route('/')
-	 */
-	public function index(EntityManegerInterface $em)
-	{
-		# ....
-
- 		$cache = $em->getCache();
-    	$cache->containsEntity(Like::class, 1)  // Check if the cache exists
-    	$cache->evictEntity(Like::class, 1);  // Remove an entity from cache
-    	$cache->evictEntityRegion(Like::class); // Remove all entities from cache
-    	$cache->containsCollection(Like::class, 'likes', 1); // Check if the cache exists
-    	$cache->evictCollection(Like::class, 'likes', 1);// Remove an entity collection from cache
-    	$cache->evictCollectionRegion(Like::class, 'likes');// Remove all collections from cache
-
     # ...
-	}
+    /**
+     * @Route('/')
+     */
+    public function index(EntityManegerInterface $em)
+    {
+        # ....
+
+        $cache = $em->getCache();
+        $cache->containsEntity(Like::class, 1)  #Check if the cache exists
+        $cache->evictEntity(Like::class, 1);  #Remove an entity from cache
+        $cache->evictEntityRegion(Like::class); #Remove all entities from cache
+        $cache->containsCollection(Like::class, 'likes', 1); #Check if the cache exists
+        $cache->evictCollection(Like::class, 'likes', 1); #Remove an entity collection from cache
+        $cache->evictCollectionRegion(Like::class, 'likes'); #Remove all collections from cache
+    # ...
+    }
 }
 ```

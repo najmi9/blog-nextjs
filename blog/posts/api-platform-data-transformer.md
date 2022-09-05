@@ -73,7 +73,7 @@ cd .docker/php
 touch Dockerfile
 ```
 
-```Dockerfile
+```dockerfile
 FROM php:8.1-fpm
 
 ARG USER_ID

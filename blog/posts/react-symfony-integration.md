@@ -5,7 +5,7 @@ slug: react-symfony-integration
 description: "Webpack encore: Using React inside symfony application"
 ---
 
-![Symfony React Api Platform](/imgs/symfony-react.png)
+![Symfony React Api Platform](/imgs/blog/symfony-react.png)
 
 ### Prerequisites :
 
@@ -34,7 +34,7 @@ yarn install
 composer require api
 ```
 #### 5.Configure database in your **.env** file
-You can also use a sqlite database for developpment, but we will use phpMyAdmin to manage database.
+You can also use a sqlite database for development, but we will use phpMyAdmin to manage database.
 ```bash
 DATABASE_URL=mysql://user:password@127.0.0.1:3306/database_name?serverVersion=5.7
 ```
@@ -273,7 +273,7 @@ class DefaultController extends AbstractController
 ```
 The **reactRouting** parameter is used to allow React Router to control routing with the application and stop Symfony from intercepting the route
 
-#### 14. The last thong is to create a div#root in your index.html.twig file and you're done.
+The last thong is to create a div#root in your index.html.twig file and you're done.
 
 ```html
 {# templates/default/index.html.twig #}

@@ -19,6 +19,9 @@ const MarkDown = ({ content }) => {
             components={{
                 code: ({node, ...props}) => <CodeBlock {...props} />,
                 img: (node) => <img width='100%' height='100%' src={node.src} alt={node.alt}/>,
+                a: (node) => <a href={node.href} title={node.title} className="btn btn-sm btn-primary" target={'_blank'}
+                    rel={'noreferrer'}
+                >{node.children}</a>,
                 // math: ({node, ...props}) => <Math  {...props}/>,
                 // inlineMath: ({node, ...props}) => <InlineMath  {...props}/>
             }}
