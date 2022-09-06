@@ -1,6 +1,6 @@
 ---
 title: Why use PHP session to store the user cart instead of the localStorage
-image: '/imgs/blog/session.jpg'
+image: /imgs/blog/session.jpg
 slug: localstorage-session
 description: Why use PHP session to store the user cart instead of the localStorage
 ---

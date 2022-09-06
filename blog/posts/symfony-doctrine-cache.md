@@ -1,6 +1,6 @@
 ---
-title: "Doctrine ORM: Second Level Cache."
-image: "/imgs/blog/doctrine-cache/doctrine_cache.png"
+title: Doctrine ORM Second Level Cache.
+image: /imgs/blog/doctrine-cache/doctrine_cache.png
 slug: symfony-doctrine-cache
 description: Doctrine Cache
 ---

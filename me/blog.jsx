@@ -1,21 +1,29 @@
-import React from 'react';
-import BlogPost from '../blog/BlogPost';
-import matter from 'gray-matter';
+import React, { useEffect, useRef } from 'react';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
+import useIntersect from '../hooks/useIntersect';
+import { postsMetadata } from '../services/blogParser';
 
 export default function Blog ({data, all}) {
-    const realData = data.map(blog => matter(blog));
-    const listItems = realData.map(listItem => listItem.data);
+    const BlogPost = dynamic(() => import('../blog/BlogPost'), {ssr: false});
+
+    const ref = useRef(null);
+
+    const [isView, setNode] = useIntersect();
+
+    useEffect(() => {
+        setNode(ref)
+    }, [ref]);
 
     return (
-        <section id="blog" className="blog">
+        <section id="blog" className="blog" ref={ref}>
             <div className="container">
                 <div className="section-title">
                     <h2>Blogs</h2>
                     <p>Here Some articles that write in my free time.</p>
                 </div>
-                <div className="row g-2" data-aos="fade-right">
-                    {listItems.map((post, i) => {
+                {isView && <div className="row g-2" data-aos="fade-right">
+                    {postsMetadata(data).map((post, i) => {
                         const Li = <div className="col-lg-4 col-md-6" key={'p'+i}>
                             <BlogPost post={post} />
                         </div>;
@@ -25,7 +33,7 @@ export default function Blog ({data, all}) {
                             return ( i < 6 ? Li : '')
                         }
                     })}
-                </div>
+                </div>}
                 {!all && <Link href="/blog">
                     <a className="btn my-3 btn-primary fs-bolder">
                         See More <i className='bx bx-right-arrow-alt'></i>

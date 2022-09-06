@@ -1,6 +1,6 @@
 ---
-title: "Web Scraping and Automation with python: Practical Examples."
-image:  "/imgs/blog/scraper.png"
+title: Web Scraping and Automation with python, Practical Examples.
+image: /imgs/blog/scraper.png
 slug: web-scraping-examples
 description: Web Scraping and Automation with python
 ---

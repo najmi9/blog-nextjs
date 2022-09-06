@@ -1,8 +1,8 @@
 ---
-title: "How to use Symfony and React in the same project ?"
-image: "/imgs/blog/s5-react.png"
+title: How to use Symfony and React in the same project ?
+image: /imgs/blog/s5-react.png
 slug: react-symfony-integration
-description: "Webpack encore: Using React inside symfony application"
+description: Webpack encore, Using React inside symfony application
 ---
 
 ![Symfony React Api Platform](/imgs/blog/symfony-react.png)

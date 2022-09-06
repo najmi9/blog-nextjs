@@ -1,6 +1,6 @@
 ---
-title: "How to Create a Technical Blog by using React, Markdown and Syntax Highlighter Code ?"
-image: "/imgs/blog/syntaxic.png"
+title: How to Create a Technical Blog by using React, Markdown and Syntax Highlighter Code ?
+image: /imgs/blog/syntaxic.png
 slug: react-blog-syntax-highlighter
 description: How to Create a Technical Blog by using React, Markdown and Syntax Highlighter Code ?
 ---
