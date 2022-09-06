@@ -1,22 +1,23 @@
 import React from 'react';
-import matter from "gray-matter";
 import MarkDown from '../../blog/markdown-parser/MarkDown';
 import Head from 'next/head';
+import { parsePost } from '../../services/blogParser';
 
 function Blog(props) {
-    const {data, content} = matter(props.content);
-    const Description = (content) => <meta content={content} name="description" />
-    const Keywords = (content) => <meta content={content} name="keywords" />
+    const {metaData, content} = parsePost(props.content);
+    const {image, slug, description, title} = metaData;
+    const Description = (ct) => <meta content={ct} name="description" />
+    const Keywords = (ct) => <meta content={ct} name="keywords" />
 
     return (
         <>
         <Head>
-            <title>{data.title}</title>
-            <Description content={data.title} />
-            <Keywords content={data.slug} />
-            <meta property="og:title" content={data.title} />
-            <meta property="og:description" content={data.description} />
-            <meta property="og:image" content={'https://www.najmidev.tech' + data.image} />
+            <title>{title}</title>
+            <Description content={title} />
+            <Keywords content={slug} />
+            <meta property="og:title" content={title} />
+            <meta property="og:description" content={description} />
+            <meta property="og:image" content={'https://www.najmidev.tech' + image} />
             <script
                 type='application/ld+json'
                 dangerouslySetInnerHTML={{
@@ -26,12 +27,12 @@ function Blog(props) {
                             "@type": "BlogPosting",
                             "mainEntityOfPage": {
                                 "@type": "WebPage",
-                                "@id": `https://najmidev.tech/blog/${data.slug} `
+                                "@id": `https://najmidev.tech/blog/${slug} `
                             },
-                            "headline": data.title,
+                            "headline": title,
                             "image": {
                                 "@type": "ImageObject",
-                                "url": `https://www.najmidev.tech/${data.image}`,
+                                "url": `https://www.najmidev.tech/${image}`,
                                 "height": 463,
                                 "width": 700
                             },
@@ -51,8 +52,8 @@ function Blog(props) {
                                     "height": 60
                                 }
                             },
-                            "description": data.description || 'Symfony PHP Developer',
-                            "articleBody": data.description || 'Article body'
+                            "description": description,
+                            "articleBody": ''
                         }
                     )
                 }}
@@ -61,7 +62,7 @@ function Blog(props) {
         </Head>
         <div id="blog-post-container">
             <div className="container">
-                <h1 className="header">{data.title}</h1>
+                <h1 className="header">{title}</h1>
                 <MarkDown content={content}/>
             </div>
         </div>

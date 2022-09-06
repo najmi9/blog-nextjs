@@ -1,6 +1,6 @@
 ---
 title: Useful Linux Commands
-image: "/imgs/blog/logo-linux.jpg"
+image: /imgs/blog/logo-linux.jpg
 slug: useful-linux-commands
 description: Some linux commands that I use on daily basis
 ---

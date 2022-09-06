@@ -1,6 +1,6 @@
 ---
-title: "Django Rest Framework ApiView and React JS"
-image: "/imgs/blog/django-react.jpeg"
+title: Django Rest Framework ApiView and React JS
+image: /imgs/blog/django-react.jpeg
 slug: create-django-api
 description:  Django Rest Framework ApiView and React JS
 ---

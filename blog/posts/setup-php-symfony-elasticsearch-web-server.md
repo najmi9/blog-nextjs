@@ -1,6 +1,6 @@
 ---
 title: Setup PHP Symfony Elasticsearch Web Server On Linux Ubuntu
-image: '/imgs/blog/symfony_app.png'
+image: /imgs/blog/symfony_app.png
 slug: setup-php-symfony-elasticsearch-web-server
 description: Install Complete Web Server On Linux
 ---

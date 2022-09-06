@@ -1,11 +1,11 @@
 import Head from 'next/head'
 import About from '../me/about';
-import Blog from '../me/blog';
 import Skills from '../me/skills';
 import Contact from '../me/contact';
-import Protofolio from '../me/protofolio';
 import Hero from '../me/hero';
 import Experience from '../me/experience';
+import Portfolio from '../me/portfolio';
+import Blog from '../me/blog';
 
 export default function Home({data}) {
   return (
@@ -24,7 +24,7 @@ export default function Home({data}) {
         <About />
         <Experience />
         <Skills />
-        <Protofolio />
+        <Portfolio />
         <Contact />
         <Blog data={data}/>
       </main>

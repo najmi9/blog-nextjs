@@ -1,6 +1,6 @@
 ---
-title: "Implementation Of algolia Search With Symfony 5"
-image: "/imgs/blog/algolia/algolia.jpeg"
+title: Implementation of Algolia search with Symfony 5
+image: /imgs/blog/algolia/algolia.jpeg
 slug: symfony-algolia-integration
 description: use Algolia as a search engine in Symfony project
 ---
