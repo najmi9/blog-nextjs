@@ -1,25 +1,9 @@
 ---
-title: 'Symfony Messenger: Supervisor Configuration In Production Enviroment'
-image: "/imgs/blog/messenger-symfony/cover.jpeg"
+title: Symfony Messenger and Supervisor Configuration In Production Environment
+image: /imgs/blog/messenger-symfony/cover.jpeg
 slug: messenger-symfony-supervisor
 description: How to use the supervisor to run the messenger worker inside symfony application
 ---
-
-# Table of Content:
-1. [Introduction](#introduction)
-2. [Development](#development)
-    1. [Installation](#installation)
-    2. [Creating a Message & Handler](#creating-a-message-and-handler)
-    3. [Dispatching the Message](#dispatching-the-message)
-    4. [Transports Async Queued Messages](#transports-async-queued-messages)
-    5. [Consuming Messages Running the Worker](#consuming-messages-running-the-worker)
-3. [Production](#production)
-    1. [Introduction](#introduction)
-    2. [Installation Of The Supervisor](#installation-of-the-supervisor)
-    3. [Configuration](#configuration)
-    4. [Running The Supervisor](#running-the-supervisor)
-    5. [Usefull Links](#usefull-links)
-
 
 ### Inroduction
 
@@ -27,7 +11,7 @@ Messenger provides a message bus with the ability to send messages through trans
 
 [Supervisor](http://supervisord.org/): A Process Control System is a client/server system that allows its users to monitor and control a number of processes on UNIX-like operating systems.
 
-In this article we will going to show you how to create and handle some logic asychronounsly and handle the configuration of the supervisor in the production mode, because you don't need a supervisor in development, you can run the worker (**php bin/console messenger:consume**) manually.
+In this article we will going to show you how to create and handle some logic asynchronously and handle the configuration of the supervisor in the production mode, because you don't need a supervisor in development, you can run the worker (**php bin/console messenger:consume**) manually.
 
 ### Development
 
@@ -147,11 +131,11 @@ On production, there are a few important things to think about:
 
 * Use Supervisor to keep your worker(s) running
 
-* Don’t Let Workers Run Forever:  use a flag like **messenger:consume --limit=10** to tell your worker to only handle 10 messages before exiting (then Supervisor will create a new process). There are also other options like **--memory-limit=128M** and **--time-limit=3600**.
+* Don’t Let Workers Run Forever:  use a flag like <b class="text-danger">messenger:consume --limit=10</b> to tell your worker to only handle 10 messages before exiting (then Supervisor will create a new process). There are also other options like **--memory-limit=128M** and **--time-limit=3600**.
 
-* Restart Workers on Deploy: To do this, run **messenger:stop-workers** on deploy. This will signal to each worker that it should finish the message it’s currently handling and shut down gracefully.
+* Restart Workers on Deploy: To do this, run <b class="text-success">messenger:stop-workers</b> on deploy. This will signal to each worker that it should finish the message it’s currently handling and shut down gracefully.
 
-On production, we somehow need to make sure that this command is always running and  If it quits for some reason, start a new one. And actually, it's not just that we need a way to make sure that someone starts this command and then it runs forever. We actually don't want the command to run forever. No matter how well you write your PHP code, PHP just isn't meant to be ran forever - eventually your memory footprint will increase too much and the process will die. We don't want our process to run forever.  what we really want is for **messenger:consume** to run, handle... a few messages... then close itself. Then, we'll use a different tool to make sure that each time the process disappears.
+On production, we somehow need to make sure that this command is always running and  If it quits for some reason, start a new one. And actually, it's not just that we need a way to make sure that someone starts this command and then it runs forever. We actually don't want the command to run forever. No matter how well you write your PHP code, PHP just isn't meant to be ran forever - eventually your memory footprint will increase too much and the process will die. We don't want our process to run forever.  what we really want is for <b class="text-primary">messenger:consume</b> to run, handle... a few messages... then close itself. Then, we'll use a different tool to make sure that each time the process disappears.
 
 
 #### Installation Of The Supervisor

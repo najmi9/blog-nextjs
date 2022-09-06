@@ -1,10 +1,8 @@
 ---
-
-title: "AWS Web Services For Web Developers"
-image: "/imgs/blog/aws/aws.webp"
+title: AWS Web Services For Web Developers
+image: /imgs/blog/aws/aws.webp
 slug: aws-web-services-for-web-developers
 author: IMAD NAJMI
-
 ---
 
 ___

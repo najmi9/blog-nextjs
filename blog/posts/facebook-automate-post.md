@@ -1,6 +1,6 @@
 ---
-image: "/imgs/blog/fc-scraping.jpeg"
-title: "Automate publishing posts on Facebook with Selenium and Python."
+image: /imgs/blog/fc-scraping.jpeg
+title: Automate publishing posts on Facebook with Selenium and Python.
 slug: facebook-automate-post
 description: Publish posts on facebook accounts programmatically with python
 ---
