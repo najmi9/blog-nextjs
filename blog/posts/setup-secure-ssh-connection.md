@@ -1,9 +1,9 @@
 ---
 
 title: What is SSH, How it's work, How we can use it and How to secure a open SSH connection?
-image: '/imgs/blog/ssh.png'
+image: /imgs/blog/ssh.png
 slug: setup-secure-ssh-connection
-description: Ssh Connection for Linux servers
+description: SSH Connection for Linux servers
 ---
 
 

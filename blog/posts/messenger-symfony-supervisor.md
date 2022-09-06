@@ -1,6 +1,6 @@
 ---
-title: 'Symfony Messenger: Supervisor Configuration In Production Enviroment'
-image: "/imgs/blog/messenger-symfony/cover.jpeg"
+title: Symfony Messenger and Supervisor Configuration In Production Environment
+image: /imgs/blog/messenger-symfony/cover.jpeg
 slug: messenger-symfony-supervisor
 description: How to use the supervisor to run the messenger worker inside symfony application
 ---

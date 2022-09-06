@@ -1,7 +1,7 @@
 ---
-title: "Solid design and principles in programming"
-image: "/imgs/blog/syntaxic.png"
-slug: react_blog
+title: Solid design and principles in programming
+image: /imgs/blog/solid/index.webp
+slug: solid-principles
 description: Solid principles in software design
 ---
 

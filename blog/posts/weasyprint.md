@@ -1,6 +1,6 @@
 ---
-title: "How to use WeasyPrint in symfony 5 ?"
-image: "/imgs/blog/weasyprint/cover.jpeg"
+title: How to use WeasyPrint in symfony 5?
+image: /imgs/blog/weasyprint/cover.jpeg
 slug: weasyprint
 description: Example of using the process component of Symfony, using a python tool to generate the pdf from teh HTML
 ---

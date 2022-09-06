@@ -1,6 +1,7 @@
 ---
 title: How to use Mercure Protocol with Symfony and API Platform ?
-image: "/imgs/blog/mercure.jpeg"
+description: using mercure bundle in symfony application
+image: /imgs/blog/mercure.jpeg
 slug: mercure-symfony-blog
 ---
 

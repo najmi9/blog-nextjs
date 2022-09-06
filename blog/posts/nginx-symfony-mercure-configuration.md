@@ -1,6 +1,6 @@
 ---
-title: 'Nginx Symfony Mercure Proxy Server Configuration Example'
-image: "/imgs/blog/nginx_symfony/nginx.webp"
+title: Nginx Symfony Mercure Proxy Server Configuration Example
+image: /imgs/blog/nginx_symfony/nginx.webp
 slug: nginx-symfony-mercure-configuration
 description: Nginx example of a symfony project that uses a proxy server for the mercure hub
 ---
