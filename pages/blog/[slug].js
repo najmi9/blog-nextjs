@@ -17,7 +17,7 @@ function Blog(props) {
             <Keywords content={slug} />
             <meta property="og:title" content={title} />
             <meta property="og:description" content={description} />
-            <meta property="og:image" content={'https://www.najmidev.tech' + image} />
+            <meta property="og:image" content={`https://www.najmidev.tech/${image}`} />
             <script
                 type='application/ld+json'
                 dangerouslySetInnerHTML={{

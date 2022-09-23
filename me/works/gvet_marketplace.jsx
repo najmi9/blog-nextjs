@@ -18,16 +18,15 @@ const GVETMarketplace = () => {
         }
     ];
     return (
-        <Work 
+        <Work
             images={images}
             title="Marketplace Symfony Application"
-            link='https://marketplace.gvetdemo.com.ar/'
-            tags={['PHP', 'Symfony', 'Twig', 'Doctrine ORM', 'Messenger', 'Bootstrap', 'Mercure', 
-            'Doctrine Second level cache', 'Redis', 'Chart js', 'API Platform', 'HttpFoundation Bundle', 'Elasticsearch', 'Linux']}
+            link=''
+            tags={['PHP', 'Symfony', 'Mercure', 'Redis', 'API Platform', 'Elasticsearch', 'Linux']}
             date="16:25 11/01/2021"
-            text="Marketplace when sellers can sell multiple products, a user can sign up and buy an order, 
-            follow the status of his order and see tracking data. the seller has a dashboard when he can manage orders and payments, 
-            the admin has also a dashboard when he can approve the a store or remove it, 
+            text="Marketplace when sellers can sell multiple products, a user can sign up and buy an order,
+            follow the status of his order and see tracking data. the seller has a dashboard when he can manage orders and payments,
+            the admin has also a dashboard when he can approve the a store or remove it,
             the sellers will pay an invoice of each months that depends on how many products they bought."
         />
     );

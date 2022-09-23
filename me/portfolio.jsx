@@ -18,7 +18,7 @@ const Portfolio = () => {
             <div className="section-title">
               <h2>Portfolio</h2>
             </div>
-           {isView &&  <AllWorks />}
+              {isView && <AllWorks />}
         </div>
       </section>
     );
