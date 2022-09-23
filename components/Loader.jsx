@@ -1,19 +1,12 @@
 import React from 'react';
 
-const Loader = ({ color }) => {
-
-    if (!color) {
-        color = 'blue';
-    }
-
+const Loader = () => {
     return (
-        <section className="d-flex justify-content-center align-items-center"
-            style={{ 'minHeight': 80 + 'vh' }}>
-            <spinning-dots
-                style={{ "width": 200 + "px", "strokeWidth": 20 + "px", "color": color }}
-                dots="8">
-            </spinning-dots>
-        </section>
+        <div className="d-flex justify-content-center">
+            <div className="spinner-grow text-danger" style={{width: '3rem', height: '3rem'}} role="status">
+                <span className="visually-hidden">Loading...</span>
+            </div>
+        </div>
     );
 }
 

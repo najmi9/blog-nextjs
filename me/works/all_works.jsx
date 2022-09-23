@@ -5,6 +5,8 @@ import GvetMigration from './gvet_migration';
 import ShopSymfony from './symfony_shop';
 import YoutubeDl from './youtube_dl';
 import Chat from './chat';
+import SiteBV from './sitebv';
+import GvetAdmin from './gvet_admin';
 
 const AllWorks = () => {
 
@@ -16,12 +18,14 @@ const AllWorks = () => {
               <Col>
                 <GVETMarketplace />
               </Col>
-              {/*
               <Col>
                 <GvetAdmin />
-              </Col> */}
+              </Col>
               <Col>
                 <Calculators />
+              </Col>
+              <Col>
+                <SiteBV />
               </Col>
               <Col>
                 <Chat />
@@ -38,7 +42,7 @@ const AllWorks = () => {
 
 const Col = ({children}) => {
   return (
-    <div className="col-lg-4 col-md-6 mt-2">
+    <div className="col-xl-3 col-lg-4 col-md-6 mt-2">
       {children}
     </div>
   )

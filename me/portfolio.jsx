@@ -1,7 +1,6 @@
-import React, {Suspense, useEffect, useRef } from 'react';
+import React, {useEffect, useRef } from 'react';
 import dynamic from 'next/dynamic'
 import useIntersect from '../hooks/useIntersect';
-import Loader from '../components/Loader';
 
 const Portfolio = () => {
     const AllWorks = dynamic(() => import('./works/all_works'), {ssr: false});
@@ -19,9 +18,7 @@ const Portfolio = () => {
             <div className="section-title">
               <h2>Portfolio</h2>
             </div>
-           <Suspense fallback={<Loader />}>
-              {isView &&  <AllWorks />}
-           </Suspense>
+              {isView && <AllWorks />}
         </div>
       </section>
     );

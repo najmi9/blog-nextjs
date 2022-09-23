@@ -13,7 +13,7 @@ export default function MyApp({ Component, pageProps }) {
         <Script src="/js/vendor/swiper/swiper-bundle.min.js"></Script>
         <Script src="/js/vendor/typed.js/typed.min.js"></Script>
         <Script src="/js/vendor/waypoints/noframework.waypoints.js"></Script>
-        <Script src="/js/vendor/main.js"></Script>
+        <Script src="/js/vendor/main.js" type='module'></Script>
       <Component {...pageProps} />
     </Layout>
   )
