@@ -31,6 +31,17 @@ networks:
   dev:
 
 services:
+  web:
+    image: nginx:alpine
+    restart: unless-stopped
+    ports:
+    - 80:80
+    volumes:
+    - .:/var/www:delegated
+    - ./site.conf:/etc/nginx/conf.d/default.conf
+    networks:
+    - dev
+
   php:
     restart: unless-stopped
     container_name: php-container
@@ -45,9 +56,6 @@ services:
       - './:/var/www:delegated'
     depends_on:
       - db
-    ports:
-      - 80:80 # Temporary port to test the api without installing a web server
-    command: symfony serve --port 80 # Run the internal symfony php server
 
   db:
     image: 'mariadb:latest'
@@ -65,6 +73,49 @@ services:
 volumes:
   db_data:
 ```
+We used <b class="text-danger">Nginx</b> as a web server so I add a basic configuration in the root directory inside the filename
+<span class="text-primary">site.conf</span>
+, create that file and copy this code:
+
+```php
+server {
+    listen 80;
+    server_name localhost;
+    root /var/www/public;
+
+    add_header X-Frame-Options "SAMEORIGIN";
+    add_header X-XSS-Protection "1; mode=block";
+    add_header X-Content-Type-Options "nosniff";
+
+    index index.html index.htm index.php;
+
+    charset utf-8;
+
+    location / {
+        root /var/www/;
+        try_files /public/$uri /public/$uri /assets/$uri /index.php?$query_string;
+    }
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location = /robots.txt  { access_log off; log_not_found off; }
+
+    error_page 400 401 402 403 404 405 406 407 408 409 410 411 412 413 414 415 416 417 418 421 422 423 424 425 426 428 429 431 451 500 501 502 503 504 505 506 507 508 510 511 /error.html;
+
+    location ~ \.php$ {
+        fastcgi_pass php:9000;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+        include fastcgi_params;
+        fastcgi_buffers 16 16k;
+        fastcgi_buffer_size 32k;
+    }
+
+    location ~ /\.(?!well-known).* {
+        deny all;
+    }
+}
+```
+
 I created a simple <b class="text-primary">Dockerfile</b> to build a php 8.1 image with a few common extensions, symfony cli and composer, I also created a user for the container to avoid the permission problems, copy that content of this file and move it to <mark>/.docker/php </mark> folder as mentioned in the context build of the php container.
 
 ```bash
@@ -143,7 +194,7 @@ composer dumpautoload
 
 I use git to upload my code to github, so let's initialize a new repository.
 ```bash
-composer init --name dto/demo --type project --author "username <email@gmail.com>" # click Enter to skip all questions
+git init --name dto/demo --type project --author "username <email@gmail.com>" # click Enter to skip all questions
 ```
 
 and run this commands to set the
@@ -151,7 +202,7 @@ and run this commands to set the
 
 ```bash
 
-echo DATABASE_URL="mysql://root:root@db:3306/app?serverVersion-8&charset=utf8mb4" > env.local
+echo DATABASE_URL="mysql://root:root@db:3306/app?serverVersion-8&charset=utf8mb4" > .env.local
 symfony console doctrine:database:create --if-not-exists
 ```
 

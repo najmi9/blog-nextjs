@@ -4,7 +4,7 @@ import Work from '../../components/Work';
 const YoutubeDl = () => {
     const images = [
         {
-            original: "imgs/work/youtube_dl/home.png"
+            original: "imgs/work/youtube_dl/home_24.png"
         },
     ];
     return (

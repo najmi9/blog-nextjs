@@ -26,7 +26,7 @@ const Work = ({images, text, title, tags=[], date, link="#"}) => {
             </div>
             <div className="card-body">
                 <div className="card-text">
-                    <h4 className="work-title"> {title} </h4>
+                    <h6 className="work-title"> {title} </h6>
                     { state === 'IDLE' && <button className='btn btn-sm btn-primary' onClick={() => setState('SHOW')}>
                         See details <i className="bi-arrow-down"></i>
                     </button>}
@@ -35,10 +35,13 @@ const Work = ({images, text, title, tags=[], date, link="#"}) => {
                         Close <i className="bi-arrow-up"></i>
                     </button>
                     <div className="work-description">{text}</div>
-                    <div className="mt-1">
-                        The website link :
-                        <a className="btn btn-sm text-primary" href={link} rel="noreferrer" target="_blank">Here!</a>
-                    </div>
+                    {
+                        link && <div className="mt-1">
+                            The website link :
+                            <a className="btn btn-sm text-primary" href={link} rel="noreferrer" target="_blank">Here!</a>
+                        </div>
+                    }
+
                     <div className="tags">
                         {
                             tags.map((e, i) => (<span key={i} className="tag">
