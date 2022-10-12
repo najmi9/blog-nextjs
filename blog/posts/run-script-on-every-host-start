@@ -1,0 +1,16 @@
+# How to run a script of comands on every start of the server.
+
+1. First write your script starting with specifing the executor, for example :
+```md
+#! /bin/bash
+```
+2. Move your script to `/etc/init.d` folder
+3. Make your file executable, by running this commend :
+```bash
+sudo chmod +x myscript
+```
+4. Run this command:
+
+```bash
+sudo update-rc.d myscript defaults
+```
