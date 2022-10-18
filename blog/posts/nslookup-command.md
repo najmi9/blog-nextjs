@@ -1,12 +1,11 @@
 ---
-image: /imgs/blog/fc-scraping.jpeg
-title: Nslookup Commands
+image: /imgs/blog/nslookup/nslookup.webp
+title: Nslookup Command
 slug: nslookup-command
-description:  
+description: Nslookup Command
 ---
 
-# Name Server Lookup
-is a useful command for getting information from DNS server. It is a network administration tool for querying the Domain Name System (DNS) to obtain domain name or IP address mapping or any other specific DNS record. It is also used to troubleshoot DNS related problems.
+<b class="text-primary">Name Server Lookup</b> is a useful command for getting information from DNS server. It is a network administration tool for querying the Domain Name System (DNS) to obtain domain name or IP address mapping or any other specific DNS record. It is also used to troubleshoot DNS related problems.
 
 ```bash
 nslookup google.com
@@ -49,3 +48,5 @@ nslookup -type=any google.com
 ```
 Lookup for any record
 We can also view all the available DNS records using -type=any option.
+
+<b>Author: <span class="text-warning">Imad Najmi</span></b> 
