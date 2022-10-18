@@ -1,3 +1,11 @@
+---
+image: /imgs/blog/fc-scraping.jpeg
+title: Iptables commands for a web server
+slug: iptables-commands-web-server
+description:  Iptables commands for a web server
+---
+
+
 #! /bin/sh
 
 #On flush
