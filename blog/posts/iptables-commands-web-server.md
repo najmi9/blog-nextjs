@@ -1,15 +1,17 @@
 ---
-image: /imgs/blog/fc-scraping.jpeg
+image: /imgs/blog/iptables/iptables.webp
 title: Iptables commands for a web server
 slug: iptables-commands-web-server
 description:  Iptables commands for a web server
 ---
 
 
+This is a script of iptables roles that can be used to secure a web server like nginx on a linux server:
+
+```bash
 #! /bin/sh
 
 #On flush
-
 iptables -F
 
 #Block all The connections
@@ -29,11 +31,11 @@ iables -A OUTPUT -o lo -j ACCEPT
 iptables -A INPUT -p tcp --dport 5789 -j ACCEPT
 
 #HTTP
-
 iptables -A INPUT -p tcp --dport 80 ACCEPT
 iptables -A INPUT -p tcp --dport 443 -js ACCEPT
 
 iptables -A OUTPUT -p tcp --dport 80 ACCEPT
 iptables -A OUTPUT -p tcp --dport 443 ACCEPT
+```
 
-
+<b>Author: <span class="text-warning">Imad Najmi</span></b> 
