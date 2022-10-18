@@ -15,7 +15,7 @@ First of all create a virtual environment called venv, you can named what you wa
 python3 -m venv venv
 # activate our virtual enviroment
 # on Linux or Max
-source bin/venv/activate
+source venv/bin/activate
 # on windows
 venv\Scripts\activate.bat
 

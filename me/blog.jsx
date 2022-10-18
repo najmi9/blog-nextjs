@@ -24,19 +24,19 @@ export default function Blog ({data, all}) {
                 </div>
                 {isView && <div className="row g-2" data-aos="fade-right">
                     {postsMetadata(data).map((post, i) => {
-                        const Li = <div className="col-lg-4 col-md-6" key={'p'+i}>
+                        const Li = <div className="col-xl-3 col-lg-4 col-md-6" key={'p'+i}>
                             <BlogPost post={post} />
                         </div>;
                         if (all) {
                             return Li
                         } else {
-                            return ( i < 6 ? Li : '')
+                            return ( i < 8 ? Li : '')
                         }
                     })}
                 </div>}
                 {!all && <Link href="/blog">
                     <a className="btn my-3 btn-primary fs-bolder">
-                        See More <i className='bx bx-right-arrow-alt'></i>
+                        See More
                     </a>
                 </Link>}
             </div>
