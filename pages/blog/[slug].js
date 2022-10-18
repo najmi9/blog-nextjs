@@ -60,7 +60,7 @@ function Blog(props) {
             >
         </script>
         </Head>
-        <div id="blog-post-container">
+        <div id="blog-post-container" style={{ color: 'white!important' }}>
             <div className="container">
                 <h1 className="header">{title}</h1>
                 <MarkDown content={content}/>

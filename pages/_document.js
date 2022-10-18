@@ -4,16 +4,12 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        <link href="/js/vendor/aos/aos.css" rel="stylesheet" />
         <link href="/js/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-        <link href="/js/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
-        <link href="/js/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
-        <link href="/js/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
-        <link href="/js/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
         <link href="/css/style.css" rel="stylesheet" />
 
-        <meta property="og:url"           content="https://www.najmidev.tech" />
-        <meta property="og:type"          content="website" />
+        <meta property="og:url" content="https://www.najmidev.tech" />
+        <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary" />
         <meta property="og:locale" content="en_US" />
         <meta property="og:locale:alternate" content="fr_FR" />
