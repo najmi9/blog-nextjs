@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import React from 'react';
 import Blog from '../../me/blog';
 
@@ -14,6 +15,12 @@ const AllPosts = ({data}) => {
                 <meta property="og:image" content="https://www.najmidev.tech/imgs/profile/profile-img.jpg" />
             </Head>
             <Blog data={data} all={true}/>
+
+            <div className="container mb-4">
+                <Link href={'/'}>
+                    <a className='btn btn-sm btn-warning'>Return back</a>
+                </Link>
+            </div>
         </>
     );
 }

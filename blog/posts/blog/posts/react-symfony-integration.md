@@ -1,3 +1,4 @@
+
 ---
 title: How to use Symfony and React in the same project ?
 image: /imgs/blog/s5-react.png
@@ -49,10 +50,8 @@ php bin/console make:entity Product
 <?php
 #src/Entity/Product.php
 namespace App\Entity;
-
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
-
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ProductRepository")
  * @ApiResource
@@ -65,63 +64,49 @@ class Product
      * @ORM\Column(type="integer")
      */
     private $id;
-
     /**
      * @ORM\Column(type="string", length=255)
      */
     private $title;
-
     /**
      * @ORM\Column(type="string", length=255)
      */
     private $image;
-
     /**
      * @ORM\Column(type="integer")
      */
     private $price;
-
     public function getId(): ?int
     {
         return $this->id;
     }
-
     public function getTitle(): ?string
     {
         return $this->title;
     }
-
     public function setTitle(string $title): self
     {
         $this->title = $title;
-
         return $this;
     }
-
     public function getImage(): ?string
     {
         return $this->image;
     }
-
     public function setImage(string $image): self
     {
         $this->image = $image;
-
         return $this;
     }
-
     public function getPrice(): ?int
     {
         return $this->price;
     }
-
     public function setPrice(int $price): self
     {
         $this->price = $price;
-
         return $this;
     }
-
 }
 ```
 we add **@ApiResource** annotation to tell Api Platform bundle that we want to add a new resource to our api that we will use in our react frontend.
@@ -203,14 +188,11 @@ In our root directory we have a folder called **asset** that contains all CSS an
 
 ```jsx
 // assets/js/app.js
-
 import React, {useState, useEffect} from 'react';
 import ReactDOM from 'react-dom';
-
 const App = () =>{
    const [products, setProducts] = useState([]);
    const [loading, setLoading] = useState(false)
-
    useEffect(()=>{
       fetch('http://localhost:8000/api/products')
       .then(response=>response.json())
@@ -220,7 +202,6 @@ const App = () =>{
       })
       .catch(e=>console.log(e));
    },[]);
-
    return(
        <div>
        <h1> Hello World </h1>
@@ -252,14 +233,10 @@ php bin/console make:controller DefaultController
 
 ```php
 <?php
-
 #src/Controller/DefaultController.php
-
 namespace App\Controller;
-
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
-
 class DefaultController extends AbstractController
 {
      /**
@@ -288,7 +265,3 @@ The last thong is to create a div#root in your index.html.twig file and you're d
 ___
 ### Author Imad Najmi
 ### Github [github repository](https://github.com/najmi9/blog-recat-symfony)
-
-
-
-

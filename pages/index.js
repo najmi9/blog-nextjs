@@ -23,7 +23,7 @@ export default function Home({data}) {
       </Head>
 
       <Hero />
-      <main id="main">
+      <main id="main" style={{ color: 'white!important' }}>
         <About />
         <Experience />
         <Skills />
