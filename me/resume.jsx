@@ -12,7 +12,7 @@ const Resume = () => {
         </div>
 
         <div className="row">
-          <div className="col-lg-6" data-aos="fade-up">
+          <div className="col-lg-6">
             <h3 className="resume-title">Sumary</h3>
             <div className="resume-item pb-0">
               <h4>Alex Smith</h4>
@@ -38,7 +38,7 @@ const Resume = () => {
               <p>Quia nobis sequi est occaecati aut. Repudiandae et iusto quae reiciendis et quis Eius vel ratione eius unde vitae rerum voluptates asperiores voluptatem Earum molestiae consequatur neque etlon sader mart dila</p>
             </div>
           </div>
-          <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+          <div className="col-lg-6">
             <h3 className="resume-title">Professional Experience</h3>
             <div className="resume-item">
               <h4>Senior graphic design specialist</h4>

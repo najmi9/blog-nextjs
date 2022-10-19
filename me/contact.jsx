@@ -11,7 +11,7 @@ const Contact = () => {
           <h2>Contact</h2>
         </div>
 
-        <div data-aos="fade-right" className="info d-flex justify-content-around align-items-between">
+        <div className="info d-flex justify-content-around align-items-between">
 
             <div className="address">
               <h4>Location:</h4>

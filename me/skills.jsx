@@ -12,7 +12,7 @@ const Skills = () => {
 
         <div className="row skills-content">
 
-          <div className="col-lg-6" data-aos="fade-up">
+          <div className="col-lg-6">
 
             <div className="progress">
               <span className="skill">Python <i className="val">75%</i></span>
@@ -44,7 +44,7 @@ const Skills = () => {
 
           </div>
 
-          <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+          <div className="col-lg-6">
 
             <div className="progress">
               <span className="skill">PHP <i className="val">95%</i></span>

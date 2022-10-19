@@ -4,7 +4,7 @@ const Experience = () => {
 
     return (
         <section id="experience" className="experience">
-        <div className="container" data-aos="fade-right">
+        <div className="container">
           <div className="section-title">
             <h2>Experience</h2>
           </div>

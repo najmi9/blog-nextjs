@@ -22,7 +22,7 @@ export default function Blog ({data, all}) {
                     <h2>Blogs</h2>
                     <p>Here Some articles that write in my free time.</p>
                 </div>
-                {isView && <div className="row g-2" data-aos="fade-right">
+                {isView && <div className="row g-2">
                     {postsMetadata(data).map((post, i) => {
                         const Li = <div className="col-xl-3 col-lg-4 col-md-6" key={'p'+i}>
                             <BlogPost post={post} />

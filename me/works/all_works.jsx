@@ -11,7 +11,7 @@ import GvetAdmin from './gvet_admin';
 const AllWorks = () => {
 
     return (
-        <div className="row" data-aos="fade-in">
+        <div className="row">
               <Col>
                 <GvetMigration />
               </Col>
@@ -42,7 +42,7 @@ const AllWorks = () => {
 
 const Col = ({children}) => {
   return (
-    <div className="col-xl-3 col-lg-4 col-md-6 mt-2">
+    <div className="col-xl-3 col-lg-4 col-md-6 mt-2" style={{zIndex: 0}}>
       {children}
     </div>
   )

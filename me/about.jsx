@@ -9,7 +9,7 @@ const About = () => {
         <div className="section-title">
           <h2>About</h2>
           <div className="row">
-            <div className="col-lg-6" data-aos="fade-right">
+            <div className="col-lg-6">
               <ul>
                 <li>I've been doing web development every day since 2019.</li>
                 <li>I use PHP, Python and <b>Javascript</b>.</li>
@@ -25,7 +25,7 @@ const About = () => {
                 <li>Familiar with <b>PHPUnit</b> and functional tests</li>
               </ul>
             </div>
-            <div className="col-lg-6" data-aos="fade-left">
+            <div className="col-lg-6">
               <div className="d-flex align-items-center justify-content-between">
                 <img src="imgs/symfony_stack/php.svg" alt="PHP" />
                 <img src="imgs/symfony_stack/python.svg"  width={60} height={60} alt="Python" />
@@ -44,11 +44,11 @@ const About = () => {
           </div>
         </div>
         <div className="row d-flex align-items-center">
-          <div className="col-lg-4" data-aos="fade-right">
+          <div className="col-lg-4">
             <img src='imgs/profile/profile-img.jpg' className="img-fluid" alt="Imad Najmi" />
           </div>
 
-          <div className="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+          <div className="col-lg-8 pt-4 pt-lg-0 content">
             <h3>Symfony PHP Developer</h3>
             <p className="fst-italic">
               I'm dynamic, I learn quickly, I love work in teams and make new things.
