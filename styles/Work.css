@@ -61,3 +61,45 @@ time{
 .skill {
     color: white;
 }
+
+
+.popup-box{
+    position: fixed;
+    background: darkgray;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.popup{
+    z-index: 10;
+    position: absolute;
+    background: #fff;
+    border-radius: 4px;
+    padding: 10px;
+    border: 1px solid #999;
+    overflow: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.close-icon {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+.popup-title{
+    border-bottom: 1px solid gray;
+    padding-top: 10px;
+    margin-bottom: 25px;
+    color: black;
+}
+
+.stop-scrolling {
+    height: '100%';
+    overflow: hidden;
+}

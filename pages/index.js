@@ -7,9 +7,6 @@ import Experience from '../me/experience';
 import Portfolio from '../me/portfolio';
 import Blog from '../me/blog';
 
-
-
-
 export default function Home({data}) {
   return (
     <>
