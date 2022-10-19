@@ -2,15 +2,24 @@ import React, { useState } from 'react';
 
 const PopUp = ({ children, trigger, title, increaseZIndex, decreaseZIndex}) => {
     const [state, setState] = useState('IDLE');
+
     const showPopUp = () => {
-        setState('SHOW')
+        setState(() => 'SHOW')
         document.body.classList.add('stop-scrolling');
-        increaseZIndex()
+        increaseZIndex();
+        document.body.addEventListener('keydown', keyHandler);
     }
     const hidePopUp = () => {
-        setState('IDLE');
+        setState(() => 'IDLE');
         document.body.classList.remove('stop-scrolling');
         decreaseZIndex();
+        document.body.removeEventListener('keydown', keyHandler);
+    }
+
+    const keyHandler = (e) => {
+        if ('Escape' === e.code) {
+            hidePopUp();
+        }
     }
 
     return (
