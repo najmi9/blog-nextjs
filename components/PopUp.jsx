@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 
-const PopUp = ({ children, trigger, title}) => {
+const PopUp = ({ children, trigger, title, increaseZIndex, decreaseZIndex}) => {
     const [state, setState] = useState('IDLE');
     const showPopUp = () => {
         setState('SHOW')
         document.body.classList.add('stop-scrolling');
+        increaseZIndex()
     }
     const hidePopUp = () => {
         setState('IDLE');
         document.body.classList.remove('stop-scrolling');
+        decreaseZIndex();
     }
 
     return (

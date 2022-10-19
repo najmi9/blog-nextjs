@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 
 function Gallery({images}) {
     if(!images || !Array.isArray(images)) throw Error('images props is not an array');
@@ -10,14 +10,22 @@ function Gallery({images}) {
         maxWidth: '50wh',
     }
 
+    const nextImage = useCallback(() => {
+        setCurrentImage(i => i + 1)
+    }, []);
+
+    const previousImage = useCallback(() => {
+        setCurrentImage(i => i - 1)
+    }, []);
+
     const LastIndex = images.length;
 
     return (
         <div style={{marginBottom: '50px'}}>
             {
                 images.map(
-                    (src, index) => currentImage === index && <img src={src} key={index} alt='Dev' 
-                    zwidth='100%' height='100%' style={style}/>
+                    (src, index) => currentImage === index && <img src={src} key={`img-${index}`} alt='Dev' 
+                    width='100%' height='100%' style={style}/>
                 )
             }
 
@@ -25,7 +33,7 @@ function Gallery({images}) {
                 LastIndex > 1 && <div style={{marginTop: '5px'}} className='d-flex justify-content-between'>
                     <button 
                         disabled={currentImage === LastIndex - 1}
-                        onClick={() => setCurrentImage(i => i + 1)}
+                        onClick={nextImage}
                         className='btn btn-sm btn-icon btn-danger'
                     >
                         <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none">
@@ -34,7 +42,7 @@ function Gallery({images}) {
                     </button>
                     <button
                         disabled={currentImage === 0}
-                        onClick={() => setCurrentImage(i => i - 1)}
+                        onClick={previousImage}
                         className='btn btn-sm btn-icon btn-danger'
                     >
                         <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none">

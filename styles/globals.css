@@ -1,60 +1,7 @@
-.left-btn, .right-btn {
-    position: absolute;
-    top: 50%;
-    z-index: 10;
-}
-
-.left-btn:hover, .right-btn:hover{
-    background-color: lightslategray;
-}
-
-.left-btn i, .right-btn i{
-    font-weight: bolder;
-}
-
-.left-btn {
-    left: 0;
-}
-
-.right-btn {
-    right: 0;
-}
-
 body
 {
     margin: 0;
     padding: 0;
     background-color: black;
     color: white!important;
-}
-
-/* .blog-cart:hover, .work-card:hover{
-    outline: 3px solid darkorange;
-    transform: scale(1.05);
-    transition: 0.5s;
-}
- */
-
-@keyframes flicker {
-    0%, 18%, 22%, 25%, 53%, 57%, 100% {
-        text-shadow:
-        0 0 4px #fff,
-        0 0 11px #fff,
-        0 0 19px #fff,
-        0 0 40px #0fa,
-        0 0 80px #0fa,
-        0 0 90px #0fa,
-        0 0 100px #0fa,
-        0 0 150px #0fa;
-    }
-
-    10%, 20%, 24%, 55% {        
-        text-shadow: none;
-    }    
-}
-
-.neon-effect{
-    animation: flicker 1.5s infinite alternate;
-    color: #fff;
-    font-weight: bolder;
 }
