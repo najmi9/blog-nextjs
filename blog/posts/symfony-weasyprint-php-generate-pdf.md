@@ -1,11 +1,9 @@
 ---
 title: How to use WeasyPrint in symfony 5?
 image: /imgs/blog/weasyprint/cover.jpeg
-slug: weasyprint
+slug: symfony-weasyprint-php-generate-pdf
 description: Example of using the process component of Symfony, using a python tool to generate the pdf from teh HTML
 ---
-
-
 ## Introduction:
 
 **WeasyPrint** is a smart solution helping web developers to create PDF documents. It turns simple HTML pages into gorgeous statistical reports, invoices, tickets…
@@ -15,30 +13,38 @@ WeasyPrint is based on Python, so you must have python installed in your server,
 You can read more about WeasyPrint [here!](https://doc.courtbouillon.org/weasyprint/stable/first_steps.html).
 
 ## Installation
+
 You can install WeasyPrint by the python package manager **pip** or by **apt** the package manager of linux, you can see [here](https://doc.courtbouillon.org/weasyprint/stable/first_steps.html) form more options, for me I installed like this:
+
 ```bash
 sudo apt-get update
 sudo apt-get install libxml2-dev libxslt-dev libpango1.0-dev python3-pip build-essential python3-dev python3-pip python3-setuptools python3-wheel python3-cffi libcairo2 libpango-1.0-0 libpangocairo-1.0-0 libgdk-pixbuf2.0-0 libffi-dev shared-mime-info
 sudo pip3 install WeasyPrint
 sudo mv -fr ~/.local/bin/weasyprint /usr/bin
 ```
+
 Now when you run the command **weasyprint --version** you should get something like this:
 
 ![WeasyPrint Version](/imgs/blog/weasyprint/version.png)
 
 You can install WeasyPrint also by
+
 ```bash
 sudo apt-get install WeasyPrint
 ```
+
 but the releases of Debian or Ubuntu often provide an old version of Cairo that may limit WeasyPrint’s features.
 
 ## Command-Line Usage
+
 Using the WeasyPrint command line interface can be as simple as this:
+
 ```bash
 weasyprint http://weasyprint.org /tmp/weasyprint-website.pdf
 ```
 
 We will use this command in Symfony to generate the PDFs by using the **Process Component** of Symfony, the command will be similar to this:
+
 ```php
 /** @var Symfony\Component\Process\Process $process*/
 $process = new Process([$this->binary, $this->input, $this->output, '-o', '-f=pdf']);// weasyprint /tmp/randomfile /tmp/randomfile.pdf -o -f=pdf
@@ -51,6 +57,7 @@ the second file **/tmp/randomfile.pdf** is also a temporary file contains the pd
 ## Usage in Symfony
 
 In my Symfony project I always create a specific folder for services like this called **Infrastructure** in the **src** folder, so this is the structure of our Symfony project:
+
 ```
 - bin
 - config
@@ -69,6 +76,7 @@ In my Symfony project I always create a specific folder for services like this c
 ```
 
 The **PdfGeneratorInterface.php** contains one method that generate the pdf.
+
 ```php
 
 declare(strict_types=1);
@@ -87,6 +95,7 @@ interface PdfGeneratorInerface
 ```
 
 The logic is in the **WeasyPrintGenerator.php** class that extends the interface and contains this code :
+
 ```php
 
 declare(strict_types=1);
@@ -151,6 +160,7 @@ class WeasyPrintPdfGenerator implements PdfGeneratorInerface
     }
 }
 ```
+
 The variable *$binary* is the path of the WeasyPrint binary.
 
 ```js
@@ -171,8 +181,8 @@ services:
         $binary: '%env(WEASYPRINT_PATH)%'
 ```
 
-
 Now in your app inject the **PdfGeneratorInterface** and generate your pdf as in the following example:
+
 ```php
 
 declare(strict_types=1);
@@ -266,6 +276,6 @@ class ProductController extends AbstractController
 
 So now you can generate the awesome PDFs by using this beautiful python library in the next projects.
 
- ___
+---
 
 Author: **Imad NAJMI**
