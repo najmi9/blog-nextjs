@@ -1,11 +1,11 @@
 ---
 title: Doctrine ORM Second Level Cache.
-image: /imgs/blog/doctrine-cache/doctrine_cache.png
+image: /imgs/blog/doctrine-cache/orm.webp
 slug: symfony-doctrine-cache
 description: Doctrine Cache
 ---
-
 ### Introduction
+
 This article describes how to improve your Symfony 5 app’s performance by introducing Doctrine’s second level cache. The Second Level Cache is designed to reduce the amount of necessary database access. It sits between your application and the database to avoid the number of database hits as much as possible.
 
 ### What we can cache with doctrine?
@@ -28,7 +28,6 @@ Notice that when caching collection and queries only identifiers are stored. The
 
 - **READ_ONLY (DEFAULT)** :  the fastest and simple but also unable to perform updates and locks
 - **NONSTRICT_READ_WRITE** : able to perform updates but not locks
-
 - **READ_WRITE** :  the slowest one, able to perform updates and locks and the only we can use when implementing a custom region
 
 In this article we will use just the second caching mode.
@@ -37,6 +36,7 @@ If use the first mode and when you update the entity you get an error that say y
 ### Integration with Symfony
 
 #### Configuration
+
 You can use a Symfony Cache pool by using the pool type and creating a cache
 pool through the FrameworkBundle configuration. The service type lets you
 define the ID of your own caching service.
@@ -46,6 +46,7 @@ So make sure that you are installing Doctrine and Cache bundles:
 ```bash
  composer require symfony/cache doctrine/doctrine-bundle doctrine/orm
 ```
+
 In your <b class="text-danger">doctrine.yaml</b> file add this code to enable the second level cache and
 
 ```bash
@@ -73,8 +74,11 @@ framework:
             doctrine.second_level_cache_pool:
                 adapter: cache.app
 ```
+
 #### Basic Usage
+
 Entity cache configuration allows you to define the caching strategy and region for an entity.
+
 * usage specifies the caching strategy: READ_ONLY, NONSTRICT_READ_WRITE, READ_WRITE. See The Second Level Cache.
 * region is an optional value that specifies the name of the second level cache region.
 
@@ -141,9 +145,10 @@ So Now if you call any method from the **LikeRepository** the doctrine hit datab
         ]);
     }
 ```
+
 ![doctrine second level cache in symfony](/imgs/blog/doctrine-cache/no-query.png)
 
-####  How to clear and invalidate the cache?
+#### How to clear and invalidate the cache?
 
 ```php
 #src/Controller/HomeController.php

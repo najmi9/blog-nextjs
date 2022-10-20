@@ -5,24 +5,28 @@ image: /imgs/blog/api/api.webp
 description: Transform output and input DTO with Data Transformer in Api Platform
 ---
 ### Introduction
-In this small article I will show how to use DTO and DataTransformer in <a href="https://api-platform.com" rel="noreferrer" class="btn btn-link" target="_blank">Api Platform</a>, for this I will use a very simple use case, we will create a user entity, and when a user wants to reset his password he should send his email to api and the api will send him an email containing a url to reset the password.
 
-The complete source code is <a href="https://github.com/najmi9/apiplatform-dto-demo" rel="noreferrer" class="btn btn-link" target="_blank">Here</a>.
+In this small article I will show how to use DTO and DataTransformer in <a href="https://api-platform.com" rel="noreferrer" class="btn btn-link" target="_blank">Api Platform </a>, for this I will use a very simple use case, we will create a user entity, and when a user wants to reset his password he should send his email to api and the api will send him an email containing a url to reset the password.
+
+The complete source code is <a href="https://github.com/najmi9/apiplatform-dto-demo" rel="noreferrer" class="btn btn-link" target="_blank">Here </a>.
 
 ### Requirements:
+
 - docker & docker-compose
 
 ### Setup the docker environment
+
 I will use a simple docker-compose file to use the PHP 8.1 and a simple database container to test with.
 
-First let us create a new directory <span class="badge bg-secondary">dto-demo</span> and move to it then create an a <strong>docker-compose.yaml</strong> file.
+First let us create a new directory <span class="badge bg-secondary">dto-demo</span> and move to it then create an a <strong>docker-compose.yaml </strong> file.
 
 ```bash
 mkdir dto-demo
 cd dto-demo
 touch docker-compose.yaml
 ```
-Copy this example of code to the <strong class="text-primary">docker-compose.yaml</strong> file:
+
+Copy this example of code to the <strong class="text-primary">docker-compose.yaml </strong> file:
 
 ```yaml
 version: '3.9'
@@ -73,8 +77,9 @@ services:
 volumes:
   db_data:
 ```
-We used <b class="text-danger">Nginx</b> as a web server so I add a basic configuration in the root directory inside the filename
-<span class="text-primary">site.conf</span>
+
+We used <b class="text-danger">Nginx </b> as a web server so I add a basic configuration in the root directory inside the filename
+<span class="text-primary">site.conf
 , create that file and copy this code:
 
 ```php
@@ -116,7 +121,7 @@ server {
 }
 ```
 
-I created a simple <b class="text-primary">Dockerfile</b> to build a php 8.1 image with a few common extensions, symfony cli and composer, I also created a user for the container to avoid the permission problems, copy that content of this file and move it to <mark>/.docker/php </mark> folder as mentioned in the context build of the php container.
+I created a simple <b class="text-primary">Dockerfile </b> to build a php 8.1 image with a few common extensions, symfony cli and composer, I also created a user for the container to avoid the permission problems, copy that content of this file and move it to <mark>/.docker/php </mark> folder as mentioned in the context build of the php container.
 
 ```bash
 mkdir -p .docker/php
@@ -161,6 +166,7 @@ docker-compose up -d
 ```
 
 ### Installation of Symfony project
+
 First let us go inside the php container where we can use the symfony cli and composer to install some dependencies.
 
 ```bash
@@ -193,12 +199,13 @@ composer dumpautoload
 ```
 
 I use git to upload my code to github, so let's initialize a new repository.
+
 ```bash
 git init --name dto/demo --type project --author "username <email@gmail.com>" # click Enter to skip all questions
 ```
 
 and run this commands to set the
-<span class="badge bg-primary text-italic">DATABASE_URL</span> environment variable in the <b>.env.local</b> file and create the database:
+<span class="badge bg-primary text-italic">DATABASE_URL</span> environment variable in the <b>.env.local </b> file and create the database:
 
 ```bash
 
@@ -207,10 +214,13 @@ symfony console doctrine:database:create --if-not-exists
 ```
 
 ### Installation of Api Platform and create a User entity
+
 Just with this command api platform bundle will be installed and configured:
+
 ```bash
 composer require api
 ```
+
 Let us create a new user with symfony maker component:
 
 ```bash
@@ -220,6 +230,7 @@ symfony console make:migration
 
 symfony console doctrine:migrations:migrate
 ```
+
 Cool, until now, we have a user table in our database with the columns email and password, now will make a post endpoint, when the user can send us his email to reset his password, and he should get the response of his information without showing the password, we can use symfony serialization groups, but today we will use DTOs.
 
 ![DataTransformers and DTO](/imgs/blog/api/shema.png)
@@ -255,7 +266,6 @@ final class UserResetPasswordInput
 }
 ```
 
-
 ```php
 namespace App\Dto;
 
@@ -290,7 +300,8 @@ final class UserResetPasswordOutput
     }
 }
 ```
-So to make this works let's change the **User** entity to specify the input and the output like the following code that you will need to add it to the <b class="text-danger">User</b> entity just above the class declaration:
+
+So to make this works let's change the **User** entity to specify the input and the output like the following code that you will need to add it to the <b class="text-danger">User </b> entity just above the class declaration:
 
 ```python
 #[ApiResource(
@@ -308,14 +319,14 @@ So to make this works let's change the **User** entity to specify the input and 
 class User ...
 ```
 
-The <span class="badge bg-warning">status</span> property is to change the response status code from <span class="text-danger">201</span> to
-<span class="text-danger">200</span>.
+The <span class="badge bg-warning">status</span> property is to change the response status code from <span class="text-primary">201</span> to
+<span class="text-success">200</span>.
 
 The **input** attribute is used during the deserialization process, when transforming the user-provided data to a resource instance. Similarly, the **output** attribute is used during the serialization process. This class represents how the User resource will be represented in the Response.
 
 Now we need the transformers to do the actual work, we need the **UserResetPasswordInputTransformer** to transform the input that contains an email to the User object, and the **UserResetPasswordOutputTransformer** to transform the user to a **UserResetPasswordOutput**.
 
-To do this, create a folder <b class="text-primary">DataTransformer</b> inside the **src** directory and copy the following files:
+To do this, create a folder <b class="text-primary">DataTransformer </b> inside the **src** directory and copy the following files:
 
 ```php
 namespace App\DataTransformer;
@@ -367,7 +378,6 @@ final class UserResetPasswordInputTransformer implements DataTransformerInterfac
 }
 ```
 
-
 ```php
 namespace App\DataTransformer;
 
@@ -401,7 +411,6 @@ final class UserResetPasswordOutputTransformer implements DataTransformerInterfa
 ```
 
 To test our endpoint let's create some fixture and simply a user, that we can test with.
-
 
 ```bash
 composer require orm-fixtures --dev
@@ -438,7 +447,9 @@ class UserFixtures extends Fixture
     }
 }
 ```
+
 Load the fixtures to the database:
+
 ```bash
 symfony console doctrine:fixtures:load --no-interaction
 ```
@@ -456,6 +467,5 @@ curl --header "Content-Type: application/json" \
 ```
 
 ![Postman response of calling the /api/users endpoint](/imgs/blog/api/response.png)
-
 
 Author: Imad Najmi
