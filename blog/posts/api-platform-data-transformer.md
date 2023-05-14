@@ -1,11 +1,11 @@
 ---
-title: Using DTO and Data Transformer in Api Platform Project'
+title: Using DTO and Data Transformer in Api Platform Project
 slug: api-platform-data-transformer
 image: /imgs/blog/api/api.webp
 description: Transform output and input DTO with Data Transformer in Api Platform
 ---
-### Introduction
 
+### Introduction
 In this small article I will show how to use DTO and DataTransformer in <a href="https://api-platform.com" rel="noreferrer" class="btn btn-link" target="_blank">Api Platform </a>, for this I will use a very simple use case, we will create a user entity, and when a user wants to reset his password he should send his email to api and the api will send him an email containing a url to reset the password.
 
 The complete source code is <a href="https://github.com/najmi9/apiplatform-dto-demo" rel="noreferrer" class="btn btn-link" target="_blank">Here </a>.

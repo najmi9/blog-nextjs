@@ -11,7 +11,11 @@ import GvetAdmin from './gvet_admin';
 const AllWorks = () => {
 
     return (
-        <div className="row">
+        <>
+          <div className="d-flex justify-content-center">
+            <YoutubeVideo videoId="RcfVBRhZHVs" />
+          </div>
+          <div className="row">
               <Col>
                 <GvetMigration />
               </Col>
@@ -37,6 +41,7 @@ const AllWorks = () => {
                 <YoutubeDl />
               </Col>
             </div>
+        </>
     );
 }
 
@@ -48,4 +53,18 @@ const Col = ({children}) => {
   )
 }
 
+
+// component that display a youtube video on a iframe
+function YoutubeVideo({videoId}) {
+  return (
+    <iframe
+      width="700"
+      height="400"
+      src={`https://www.youtube.com/embed/${videoId}`}
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+      title="Embedded youtube"
+    />
+  );
+}
 export default AllWorks;
