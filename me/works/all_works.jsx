@@ -12,9 +12,23 @@ const AllWorks = () => {
 
     return (
         <>
-          <div className="d-flex justify-content-center">
+          <div className="row">
+            <div className="col-lg-6">
+
+            <div className="d-flex justify-content-center">
             <YoutubeVideo videoId="RcfVBRhZHVs" />
           </div>
+
+
+            </div>
+            <div className="col-lg-6">
+
+            <div className="d-flex justify-content-center">
+              <YoutubeVideo videoId="sueVDVQUkls" />
+            </div>
+            </div>
+          </div>
+
           <div className="row">
               <Col>
                 <GvetMigration />
