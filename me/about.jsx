@@ -11,7 +11,7 @@ const About = () => {
           <div className="row">
             <div className="col-lg-6">
               <ul>
-                <li>I've been doing web development every day since 2019.</li>
+                <li>I've been doing web development for more than 4 years.</li>
                 <li>I use PHP, Python and <b>Javascript</b>.</li>
                 <li>
                   I am experienced with <a href="https://symfony.com/" target={'_blank'}><b>
@@ -19,6 +19,18 @@ const About = () => {
                   </a>.
                 </li>
                 <li>I have done some project with <a href="https://reactjs.org/" target={'_blank'}><b>React JS</b></a> and Bootstrap.</li>
+                <li>
+                    I have <a href="https://openai.com/" target={'_blank'}>
+                      <b>ChatGpt/</b>
+                      </a><a href="https://python.langchain.com/docs/get_started/introduction.html" target={'_blank'}><b>LangChain</b></a> skills:
+                    <ul>
+                      <li>✅Models - LLMs and Chat Models</li>
+                      <li>✅Text Splitting & Embedding</li>
+                      <li>✅VectorStores (Pinecone, ChrimaDB, PGVector ...)</li>
+                      <li>✅Agents & Toolkits - LLM & Conversation Agents & OpenAI Agents</li>
+                    </ul>
+
+                </li>
                 <li>I love Tech and IT: <b>Linux</b>, <b>Docker</b>, <b>Git</b>.</li>
                 <li>Experienced in <a href="https://api-platform.com/">API-PLATFORM</a> framework.</li>
                 <li>I use <a href="https://mercure.rocks/">Mercure Protocol</a> to do real time stuff.</li>
@@ -32,6 +44,7 @@ const About = () => {
                 <img src="imgs/symfony_stack/javascript.svg" width={60} height={60} alt="Javascript" />
                 <img src="imgs/symfony_stack/sf.svg"  width={60} height={60} alt="Symfony Framework" />
                 <img src="imgs/symfony_stack/flask.svg"  width={60} height={60} alt="Flask Framework" />
+                <img src="imgs/chain.png"  width={60} height={60} alt="ChainLang" />
               </div>
               <div className="d-flex align-items-center justify-content-between">
                 <img src="imgs/symfony_stack/git.svg" width={60} height={60} alt="Git Github" />
@@ -39,6 +52,7 @@ const About = () => {
                 <img src="imgs/symfony_stack/redis.svg"  width={60} height={60} alt="Redis Server" />
                 <img src="imgs/symfony_stack/react.svg" width={60} height={60}  alt="React JS" />
                 <img src="imgs/symfony_stack/api.svg" width={60} height={60} alt="Api Platform" />
+                <img src="imgs/chatgpt-openai.webp" width={60} height={60} alt="ChatGPT" />
               </div>
             </div>
           </div>
