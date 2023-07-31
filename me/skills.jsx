@@ -36,7 +36,7 @@ const Skills = () => {
             </div>
 
             <div className="progress">
-              <span className="skill">Api Platform <i className="val">90%</i></span>
+              <span className="skill">ChainLang & ChatGPT<i className="val">90%</i></span>
               <div className="progress-bar-wrap">
                 <div style={{"height": "10px", "width": "90%", backgroundColor: '#173b6c'}}></div>
               </div>
@@ -54,7 +54,7 @@ const Skills = () => {
             </div>
 
             <div className="progress">
-              <span className="skill">Symfony <i className="val">85%</i></span>
+              <span className="skill">Symfony & Api Platform <i className="val">95%</i></span>
               <div className="progress-bar-wrap">
                 <div style={{"height": "10px", "width": "85%", backgroundColor: '#173b6c'}}></div>
               </div>
