@@ -59,7 +59,7 @@ const About = () => {
         </div>
         <div className="row d-flex align-items-center">
           <div className="col-lg-4">
-            <img src='imgs/profile/profile-img.jpg' className="img-fluid" alt="Imad Najmi" />
+            <img src='imgs/profile/profile-img-removebg.png' className="img-fluid" alt="Imad Najmi" />
           </div>
 
           <div className="col-lg-8 pt-4 pt-lg-0 content">
