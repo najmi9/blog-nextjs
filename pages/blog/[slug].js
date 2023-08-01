@@ -47,7 +47,7 @@ function Blog(props) {
                                 "name": "NajmiDev",
                                 "logo": {
                                     "@type": "ImageObject",
-                                    "url": "https://www.najmidev.tech/imgs/profile/logo.png",
+                                    "url": "https://www.najmidev.tech/imgs/profile/me.jpeg",
                                     "width": 550,
                                     "height": 60
                                 }
