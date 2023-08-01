@@ -12,7 +12,7 @@ const AllPosts = ({data}) => {
                 <meta content="Imad Najmi, Blog, PHP, web" name="keywords" />
                 <meta property="og:title" content="Imad Najmi Symfony Developer" />
                 <meta property="og:description" content="Web Developer with stack PHP, Symfony, Javascript, React and Api platform framework" />
-                <meta property="og:image" content="https://www.najmidev.tech/imgs/profile/profile-img.jpg" />
+                <meta property="og:image" content="https://www.najmidev.tech/imgs/profile/profile-img-removebg.png" />
             </Head>
             <Blog data={data} all={true}/>
 
