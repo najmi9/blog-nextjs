@@ -36,6 +36,8 @@ export default function Document() {
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
         <meta name="theme-color" content="#ffffff"></meta>
         <meta name="google-adsense-account" content="ca-pub-4781695292066195"></meta>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4781695292066195"
+     crossOrigin="anonymous"></script>!:
       </Head>
       <body>
         <Main />
