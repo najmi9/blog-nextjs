@@ -35,6 +35,7 @@ export default function Document() {
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
         <meta name="theme-color" content="#ffffff"></meta>
+        <meta name="google-adsense-account" content="ca-pub-4781695292066195"></meta>
       </Head>
       <body>
         <Main />
