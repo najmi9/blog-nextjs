@@ -31,7 +31,7 @@ const About = () => {
                     </ul>
 
                 </li>
-                <li>I love Tech and IT: <b>Linux</b>, <b>Docker</b>, <b>Git</b>.</li>
+                <li>I love Tech and IT: <b>Linux</b>, <b>Docker</b>, <b>Git</b>, <b>CI/CD</b>, <b>Jenkins</b> and <b>AWS</b>.</li>
                 <li>Experienced in <a href="https://api-platform.com/">API-PLATFORM</a> framework.</li>
                 <li>I use <a href="https://mercure.rocks/">Mercure Protocol</a> to do real time stuff.</li>
                 <li>Familiar with <b>PHPUnit</b> and functional tests</li>

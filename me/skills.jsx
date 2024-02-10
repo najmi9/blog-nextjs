@@ -15,7 +15,7 @@ const Skills = () => {
           <div className="col-lg-6">
 
             <div className="progress">
-              <span className="skill">Python <i className="val">75%</i></span>
+              <span className="skill">Python & Flask <i className="val">75%</i></span>
               <div className="progress-bar-wrap">
                   <div style={{"height": "10px", "width": "75%", backgroundColor: '#173b6c'}}></div>
               </div>
@@ -29,7 +29,7 @@ const Skills = () => {
             </div>
 
             <div className="progress">
-              <span className="skill">JavaScript <i className="val">80%</i></span>
+              <span className="skill">JavaScript & React JS <i className="val">80%</i></span>
               <div className="progress-bar-wrap">
                 <div style={{"height": "10px", "width": "80%", backgroundColor: '#173b6c'}}></div>
               </div>
@@ -47,27 +47,27 @@ const Skills = () => {
           <div className="col-lg-6">
 
             <div className="progress">
-              <span className="skill">PHP <i className="val">95%</i></span>
+              <span className="skill">PHP & Symfony <i className="val">95%</i></span>
               <div className="progress-bar-wrap">
                 <div style={{"height": "10px", "width": "95%", backgroundColor: '#173b6c'}}></div>
               </div>
             </div>
 
             <div className="progress">
-              <span className="skill">Symfony & Api Platform <i className="val">95%</i></span>
+              <span className="skill">Api Platform Library<i className="val">95%</i></span>
               <div className="progress-bar-wrap">
                 <div style={{"height": "10px", "width": "85%", backgroundColor: '#173b6c'}}></div>
               </div>
             </div>
 
             <div className="progress">
-              <span className="skill">Flask <i className="val">70%</i></span>
+              <span className="skill">Linux, Docker, Jenkins<i className="val">70%</i></span>
               <div className="progress-bar-wrap">
                 <div style={{"height": "10px", "width": "70%", backgroundColor: '#173b6c'}}></div>
               </div>
             </div>
             <div className="progress">
-              <span className="skill">React <i className="val">80%</i></span>
+              <span className="skill">AWS Cloud<i className="val">70%</i></span>
               <div className="progress-bar-wrap">
                 <div style={{"height": "10px", "width": "80%", backgroundColor: '#173b6c'}}></div>
               </div>
