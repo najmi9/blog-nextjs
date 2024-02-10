@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Experience = () => {
-
     return (
         <section id="experience" className="experience">
         <div className="container">
@@ -11,7 +10,14 @@ const Experience = () => {
           <div>
             <ul>
               <li className='border-bottom mb-2'>
-                <p>From 8th of September, 2021 To Present:</p>
+                <p>From June, 2023 To Present:</p>
+                <p><b>Back end Developer At <em>Passportscan Cloud Company</em></b></p>
+                <p>71-75 Shelton Street - Covent Garden
+                  London WC2H 9JQ
+                </p>
+              </li>
+              <li className='border-bottom mb-2'>
+                <p>From 8th of September, 2021 To 20th of June, 2023:</p>
                 <p><b>Back end Developer At <em>Internet Company Site BV</em></b></p>
                 <p>P.J. Oudweg 4, 1314 CH Almere, Netherland</p>
               </li>

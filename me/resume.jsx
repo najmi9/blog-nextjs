@@ -13,7 +13,7 @@ const Resume = () => {
 
         <div className="row">
           <div className="col-lg-6">
-            <h3 className="resume-title">Sumary</h3>
+            <h3 className="resume-title">Summary</h3>
             <div className="resume-item pb-0">
               <h4>Alex Smith</h4>
               <p><em>Innovative and deadline-driven Graphic Designer with 3+ years of experience designing and developing user-centered digital/print marketing material from initial concept to final, polished deliverable.</em></p>
