@@ -14,17 +14,14 @@ const AllWorks = () => {
         <>
           <div className="row">
             <div className="col-lg-6">
-
-            <div className="d-flex justify-content-center">
-            <YoutubeVideo videoId="RcfVBRhZHVs" />
-          </div>
-
+              <div className="d-flex justify-content-center">
+                <YoutubeVideo videoId="RcfVBRhZHVs" />
+              </div>
             </div>
             <div className="col-lg-6">
-
-            <div className="d-flex justify-content-center">
-              <YoutubeVideo videoId="sueVDVQUkls" />
-            </div>
+              <div className="d-flex justify-content-center">
+                <YoutubeVideo videoId="sueVDVQUkls" />
+              </div>
             </div>
           </div>
 
@@ -54,6 +51,20 @@ const AllWorks = () => {
                 <YoutubeDl />
               </Col>
             </div>
+
+
+            <div className="row">
+            <div className="col-lg-6">
+              <div className="d-flex justify-content-center">
+                <YoutubeVideo videoId="YZ9Gxp98NEE" />
+              </div>
+            </div>
+            <div className="col-lg-6">
+              <div className="d-flex justify-content-center">
+                <YoutubeVideo videoId="BSZgETOjd5U" />
+              </div>
+            </div>
+          </div>
         </>
     );
 }
