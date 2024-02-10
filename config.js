@@ -1,4 +1,4 @@
-const TEL = '+212 06 89 30 66 69';
+const TEL = '+212 06 16 89 99 26';
 const EMAIL = 'imadnajmi9@gmail.com';
 const SITE = 'najmidev.tech'
 
