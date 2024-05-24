@@ -7,7 +7,7 @@ export default function Document() {
         <link href="/js/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 
         <link href="/css/style.css" rel="stylesheet" />
-
+        <meta name="trustpilot-one-time-domain-verification-id" content="8cd0e60e-b475-403f-a680-a72aa8b2edc2"/>
         <meta property="og:url" content="https://www.najmidev.tech" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary" />
